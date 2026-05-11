@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Academics - Shanthinikethan | Premier Education</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #4361ee;
+            --dark-blue: #0f2b3d;
+            --text-gray: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body { 
+            overflow-x: hidden;
+            background: #fcfcfc;
+        }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4361ee;
+        }
+
+        /* Fade-up animation for scroll reveal */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HERO SECTION (exactly like main campus About Us page) --- */
+        .hero-academics {
+            position: relative;
+            height: 520px;
+            /* Linear gradient from solid black/dark on left to transparent on right */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%),
+                        url('Images/image 29.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            color: white;
+        }
+
+        .hero-pill {
+            background: white;
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: slideDownFade 0.8s ease-out;
+        }
+
+        .hero-academics h1 {
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+            animation: textGlowPop 0.9s ease-out;
+        }
+
+        .hero-academics p {
+            max-width: 550px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s 0.1s forwards;
+        }
+
+        @keyframes slideDownFade {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes textGlowPop {
+            0% { opacity: 0; transform: scale(0.96) translateX(-8px); }
+            100% { opacity: 1; transform: scale(1) translateX(0); }
+        }
+        @keyframes fadeInUp {
+            to { opacity: 0.95; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(18px); }
+        }
+
+        @media (max-width: 992px) {
+            .hero-academics {
+                height: 450px;
+                background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Images/image 29.png');
+            }
+        }
+
+        /* --- ACADEMIC PROGRAMS SECTION (unchanged) --- */
+        .programs-section {
+            padding: 80px 4%;
+            background-color: var(--light-bg);
+            width: 100%;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            /* margin-bottom: 50px; */
+        }
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+       
+        .section-title:hover h2::after { width: 120px; }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .program-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 45px -12px rgba(67, 97, 238, 0.25);
+            border-color: rgba(67, 97, 238, 0.2);
+        }
+
+        .card-img {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .program-card:hover .card-img img {
+            transform: scale(1.08);
+        }
+
+        .card-icon {
+            position: absolute;
+            bottom: -25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background: #2e54ff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 4px solid white;
+            transition: transform 0.3s;
+        }
+        .program-card:hover .card-icon {
+            transform: scale(1.05);
+            background: var(--primary-blue);
+        }
+
+        .card-body {
+            padding: 45px 25px 30px;
+        }
+
+        .card-body h3 {
+            color: #2e54ff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-body p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .grade-badge {
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 5px 12px;
+            border-radius: 30px;
+        }
+
+        /* --- WHY CHOOSE US SECTION (5 items in one row on desktop, with icons + heading + content) --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .info-row {
+            transition: all 0.25s ease;
+            border-radius: 24px;
+            padding: 28px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            border: 1px solid #f0f2f5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .info-row:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(67, 97, 238, 0.15);
+            border-color: rgba(67, 97, 238, 0.2);
+        }
+
+        .feature-icon-circle {
+            width: 65px;
+            height: 65px;
+            background: #eef2ff;
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            transition: 0.25s;
+        }
+        .info-row:hover .feature-icon-circle {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+        .info-row h4 {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .info-row p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* --- FINAL CTA SECTION (preserved) --- */
+        .cta-banner {
+            padding: 80px 4% 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .cta-container {
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            width: 100%;
+            max-width: 1400px;
+            border-radius: 40px;
+            padding: 70px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 45px -20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .cta-container:hover {
+            transform: scale(1.01);
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .join-us .line {
+            width: 50px;
+            height: 2px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 2px;
+        }
+        .join-us .text {
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .avatar-group img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-left: -12px;
+            background: #fff;
+            transition: transform 0.3s ease, filter 0.2s;
+            animation: floatSoft 3s infinite ease-in-out;
+        }
+        .avatar-group img:nth-child(odd) { animation-delay: 0s; }
+        .avatar-group img:nth-child(even) { animation-delay: 0.6s; }
+        @keyframes floatSoft {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .avatar-group img:hover {
+            transform: scale(1.15) translateY(-5px);
+            filter: brightness(1.05);
+            border-color: #ffc857;
+            animation: none;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 40px;
+            line-height: 1.2;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-get-start {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(4px);
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: white;
+            padding: 16px 44px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            font-size: 1rem;
+        }
+        .btn-get-start:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px -10px rgba(0,0,0,0.2);
+            border-color: white;
+        }
+
+        .decor-icon {
+            position: absolute;
+            opacity: 0.15;
+            font-size: 3.5rem;
+            transition: 0.4s;
+        }
+        .cta-container:hover .decor-icon {
+            opacity: 0.25;
+            transform: scale(1.05);
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 1200px) {
+            .why-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 1100px) {
+            .programs-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 800px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .programs-grid { grid-template-columns: 1fr; }
+            .cta-title { font-size: 2rem; }
+            .hero-academics h1 { font-size: 2.5rem; }
+            .cta-container { padding: 50px 25px; }
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .info-row {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script src="header.js"></script>
+
+    <!-- HERO SECTION (exactly like About Us page) -->
+    <section class="hero-academics">
+        <div class="hero-content">
+            <div class="hero-pill">
+                <i class="fa-solid fa-graduation-cap"></i> Academics
+            </div>
+            <h1>Empowering Minds.<br>Building Futures.</h1>
+            <p>Our comprehensive academic programs are designed to inspire curiosity and foster critical thinking.</p>
+        </div>
+    </section>
+
+    <!-- ACADEMIC PROGRAMS SECTION (preserved) -->
+    <section class="programs-section fade-up">
+        <div class="section-title">
+            <h2>Our Academic Programs</h2><br><br>
+            <!-- <p style="color: #64748b; max-width: 600px; margin: 0 auto;">Comprehensive education from primary to senior secondary levels.</p> -->
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/IMG_0100.JPG" alt="Primary">
+                    <div class="card-icon"><i class="fa-solid fa-child"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>Primary Education</h3>
+                    <p>Building strong foundational skills in literacy, numeracy, and creativity through activity-based learning.</p>
+                    <div class="grade-badge">Grades 1 - 5</div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/image 35.png" alt="Middle School">
+                    <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>Middle School</h3>
+                    <p>Encouraging curiosity and critical thinking with a well-rounded curriculum and hands-on experiences.</p>
+                    <div class="grade-badge">Grades 6 - 8</div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/image 27.png" alt="High School">
+                    <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>High School</h3>
+                    <p>Preparing students for future challenges with subject expertise, leadership skills, and guidance.</p>
+                    <div class="grade-badge">Grades 9 - 10</div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/IMG_0109.JPG" alt="Senior Secondary">
+                    <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>Senior Secondary</h3>
+                    <p>Specialized streams and advanced learning to help students achieve academic excellence and career readiness.</p>
+                    <div class="grade-badge">Grades 11 - 12</div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/IMG_0139.JPG" alt="Technology">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>Technology & Innovation</h3>
+                    <p>Integrating technology, coding, and innovation into learning to prepare students for the digital future.</p>
+                    <div class="grade-badge">All Grades</div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-img">
+                    <img src="Images/IMG_0205.JPG" alt="Co-Curricular">
+                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                </div>
+                <div class="card-body">
+                    <h3>Co-Curricular & Life Skills</h3>
+                    <p>Nurturing creativity, communication, and life skills through activities, sports, arts, and value-based education.</p>
+                    <div class="grade-badge">All Grades</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE SHANTHINIKETHAN? (5 items in one row, icons + heading + description) -->
+    <section class="programs-section" style="background: white;">
+        <div class="section-title fade-up">
+            <h2>Why Choose Shanthinikethan?</h2>
+        </div>
+        
+        <div class="why-grid fade-up">
+            <div class="info-row">
+                <div class="feature-icon-circle"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h4>Experienced Faculty</h4>
+                <p>Our dedicated teachers inspire and guide students with care and expertise.</p>
+            </div>
+            <div class="info-row">
+                <div class="feature-icon-circle"><i class="fa-solid fa-seedling"></i></div>
+                <h4>Holistic Learning</h4>
+                <p>We balance academics, activities, and values for overall growth.</p>
+            </div>
+            <div class="info-row">
+                <div class="feature-icon-circle"><i class="fa-solid fa-rocket"></i></div>
+                <h4>Future Ready</h4>
+                <p>Preparing students with skills and knowledge for a rapidly changing world.</p>
+            </div>
+            <div class="info-row">
+                <div class="feature-icon-circle"><i class="fa-solid fa-shield-alt"></i></div>
+                <h4>Safe & Supportive</h4>
+                <p>A nurturing campus that encourages confidence and well-being.</p>
+            </div>
+            <div class="info-row">
+                <div class="feature-icon-circle"><i class="fa-solid fa-trophy"></i></div>
+                <h4>Proven Excellence</h4>
+                <p>A strong legacy of academic achievement and student success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (preserved) -->
+    <section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+            <a href="contact.html" class="btn-get-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="decor-icon" style="top: 30px; left: 8%;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon" style="bottom: 30px; right: 8%;"><i class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+
+    <script src="footer.js"></script>
+
+    <!-- Intersection Observer for scroll reveals -->
+    <script>
+        (function() {
+            const fadeElements = document.querySelectorAll('.fade-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+            fadeElements.forEach(el => observer.observe(el));
+        })();
+    </script>
+</body>
+</html>

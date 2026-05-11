@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Shanthinikethan - Excellence in Education | Admissions Open 2026-27</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts for modern typography -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --brand: #1b4a6e;
+            --accent: #3b82f6;
+            --text-dark: #1a1a1a;
+            --text-gray: #64748b;
+            --err: #ef4444;
+            --light-bg: #f8faff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand);
+        }
+
+        /* Fade-up animation for scroll reveals (modern) */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- SECTION 1: HERO (height reduced, modernized) --- */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(95deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.1) 100%),
+                url('images/IMG_0139.JPG') no-repeat;
+            background-size: cover;
+            background-position: center 30%;
+            padding: 60px 6% 80px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 50px;
+            min-height: 75vh;
+            width: 100%;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-text h1 {
+            font-size: 5rem;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text p {
+            color: #f8fafc;
+            font-size: 1.2rem;
+            max-width: 550px;
+            line-height: 1.5;
+            margin-bottom: 45px;
+            opacity: 0.95;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-blue {
+            background: var(--brand);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            font-size: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-blue:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--brand);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Enquiry Form - preserved with modern touch */
+        .enquiry-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(4px);
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            margin-left: auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .enquiry-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .enquiry-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .enquiry-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .error-msg {
+            color: var(--err);
+            font-size: 0.75rem;
+            margin-top: 6px;
+            display: none;
+            font-weight: 500;
+            padding-left: 12px;
+        }
+
+        .invalid {
+            border-color: var(--err) !important;
+            background: #fffafb;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--brand);
+            color: white;
+            padding: 16px;
+            border-radius: 40px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+            font-size: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-submit:hover {
+            background: #0f3a56;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- FEATURE BAR (preserved, modern hover) --- */
+        .feature-bar {
+            background: var(--light-bg);
+            padding: 40px 6%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .bar-item:hover {
+            transform: translateX(4px);
+        }
+
+        .bar-icon {
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.4rem;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+            transition: 0.2s;
+        }
+
+        .bar-text h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .bar-text p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* --- WHY CHOOSE (upgraded) --- */
+        .why-choose {
+            padding: 100px 6% 80px;
+            text-align: center;
+            background: white;
+        }
+
+        .why-choose h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+     
+
+        .why-choose>p {
+            color: var(--text-gray);
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-inline: auto;
+            font-size: 1.2rem;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 28px;
+            border: 1px solid #f0f2f5;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.02);
+            transition: 0.4s;
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 45px -12px rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .feature-card .icon-box {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* --- ADMISSION PROCESS --- */
+        .admission-process {
+            padding: 80px 6% 20px;
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .admission-process h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 70px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 170px;
+            position: relative;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 28px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .step-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: #eef2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--brand);
+            font-size: 1.8rem;
+        }
+
+        .step-item h5 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .step-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* --- IMPORTANT INFO (preserved) --- */
+        .important-info {
+            padding: 80px 6% 100px;
+            background: white;
+        }
+
+        .important-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: left;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .important-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #a855f7);
+            border-radius: 3px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.2fr;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .info-card {
+            background: #f8fbff;
+            padding: 40px;
+            border-radius: 28px;
+            border: 1px solid #eef2ff;
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .info-card .year {
+            color: var(--brand);
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+            font-size: 1.6rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        .info-row strong {
+            color: var(--text-dark);
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .doc-item i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+
+        .prospectus-card {
+            background: var(--brand);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prospectus-card h3 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .prospectus-card p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .prospectus-img {
+            width: 130px;
+            transform: rotate(5deg);
+            filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        .btn-download-white {
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-download-white:hover {
+            background: white;
+            color: var(--accent);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* --- CTA BANNER (exactly like about us page model: dark gradient, white text) --- */
+        .cta-banner {
+            padding: 0 6% 120px;
+            width: 100%;
+        }
+
+        .cta-container {
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: 48px;
+            padding: 70px 50px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 35px 55px -20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-container:hover {
+            transform: scale(1.01);
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .join-us .line {
+            width: 50px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+        }
+
+        .join-us .text {
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .avatar-group img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-left: -15px;
+            background: #fff;
+            object-fit: cover;
+            transition: transform 0.3s ease, filter 0.2s;
+            animation: floatSoft 3s infinite ease-in-out;
+        }
+
+        .avatar-group img:first-child {
+            margin-left: 0;
+        }
+
+        .avatar-group img:nth-child(odd) {
+            animation-delay: 0s;
+        }
+
+        .avatar-group img:nth-child(even) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes floatSoft {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .avatar-group img:hover {
+            transform: scale(1.12) translateY(-5px);
+            filter: brightness(1.05);
+            border-color: #ffc857;
+            animation: none;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 45px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-get-start {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 16px 45px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: var(--brand);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 22px -8px rgba(0, 0, 0, 0.2);
+            border-color: white;
+        }
+
+        .decor-icon {
+            position: absolute;
+            opacity: 0.12;
+            font-size: 4rem;
+            transition: 0.4s;
+            pointer-events: none;
+        }
+
+        .cta-container:hover .decor-icon {
+            opacity: 0.2;
+            transform: scale(1.05);
+        }
+
+        /* --- RESPONSIVENESS (preserved) --- */
+        @media (max-width: 1100px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                padding: 50px 6% 70px;
+                min-height: auto;
+                gap: 40px;
+            }
+
+            .enquiry-card {
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .feature-bar,
+            .features-grid,
+            .process-steps,
+            .info-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .cta-container {
+                padding: 50px 25px;
+            }
+
+            .info-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="header.js"></script>
+
+    <!-- SECTION 1: HERO (height reduced, modernized, bg image retained) -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h2>ADMISSIONS ARE OPEN</h2>
+            <h1>2026-2027</h1>
+            <p>Begin your child's journey of learning, growth, and endless possibilities with us.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn-blue">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn-outline">Download Prospectus <i class="fa-solid fa-download"></i></a>
+            </div>
+        </div>
+
+        <div class="enquiry-card" id="enquiry">
+            <h3>Enquire Now</h3>
+            <p>Fill in your details and our team will get in touch with you.</p>
+            <form id="heroForm" novalidate>
+                <div class="form-group">
+                    <input type="text" id="parentName" placeholder="Parent Name">
+                    <div class="error-msg" id="pNameErr">Enter letters only.</div>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number" maxlength="10">
+                    <div class="error-msg" id="pPhoneErr">Must be 10 digits starting with 6-9.</div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="emailAddress" placeholder="Email Address">
+                    <div class="error-msg" id="pEmailErr">Invalid email format.</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="childName" placeholder="Child's Name">
+                    <div class="error-msg" id="cNameErr">Enter letters only.</div>
+                </div>
+                <div class="form-group">
+                    <select id="gradeSelect">
+                        <option value="">Select Grade</option>
+                        <option value="Pre-KG">Pre-KG</option>
+                        <option value="LKG">LKG</option>
+                        <option value="UKG">UKG</option>
+                        <option value="Grade 1">Grade 1</option>
+                    </select>
+                    <div class="error-msg" id="gradeErr">Please select a grade.</div>
+                </div>
+                <button type="submit" class="btn-submit">Submit Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FEATURE BAR (preserved) -->
+    <div class="feature-bar fade-up">
+        <div class="bar-item">
+            <div class="bar-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="bar-text">
+                <h5>Holistic Education</h5>
+                <p>Academic excellence with life skills</p>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <div class="bar-text">
+                <h5>Safe Environment</h5>
+                <p>Nurturing and secure campus</p>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="bar-text">
+                <h5>Experienced Faculty</h5>
+                <p>Dedicated educators inspiring kids</p>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="bar-text">
+                <h5>Modern Infrastructure</h5>
+                <p>Smart classrooms, labs & more</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY CHOOSE SHANTHINIKETHAN (modernized) -->
+    <section class="why-choose fade-up">
+        <h2>Why Choose Santhi Nikethan?</h2>
+        <p>We provide the right environment for your child to explore, learn and achieve their highest potential.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box" style="color: #f59e0b;"><i class="fa-solid fa-star"></i></div>
+                <h4>Academic Excellence</h4>
+                <p>Strong curriculum that builds knowledge and confidence.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box" style="color: #8b5cf6;"><i class="fa-solid fa-masks-theater"></i></div>
+                <h4>Holistic Development</h4>
+                <p>Equal focus on academics, sports, arts and life skills.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box" style="color: #3b82f6;"><i class="fa-solid fa-brain"></i></div>
+                <h4>Future Ready Learning</h4>
+                <p>Preparing students with skills for a rapidly changing world.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box" style="color: #10b981;"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h4>Safe & Caring</h4>
+                <p>A secure and inclusive campus that feels like a second home.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box" style="color: #ef4444;"><i class="fa-solid fa-handshake-angle"></i></div>
+                <h4>Parent Partnership</h4>
+                <p>Working together with families for student success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION PROCESS (preserved) -->
+    <section class="admission-process fade-up">
+        <h2>Admission Process</h2>
+        <p>Simple steps to secure your child's seat with us.</p>
+        <div class="process-steps">
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                <h5>Step 1</h5>
+                <h4>Enquire</h4>
+                <p>Fill out the enquiry form or contact our admissions team.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-bus"></i></div>
+                <h5>Step 2</h5>
+                <h4>Visit Campus</h4>
+                <p>Schedule a visit to explore our campus and facilities.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                <h5>Step 3</h5>
+                <h4>Submit Application</h4>
+                <p>Complete the application form with the required documents.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+                <h5>Step 4</h5>
+                <h4>Interaction</h4>
+                <p>An interaction session with the child (age appropriate).</p>
+            </div>
+            <div class="step-item">
+                <div class="step-icon"><i class="fa-solid fa-user-check"></i></div>
+                <h5>Step 5</h5>
+                <h4>Confirmation</h4>
+                <p>Receive admission confirmation and complete formalities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPORTANT INFORMATION (ref image_838d4c.jpg) -->
+    <section class="important-info fade-up">
+        <h2>Important Information</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Academic Year <span class="year">2026-2027</span></h3>
+                <div class="info-row">
+                    <span><i class="fa-regular fa-calendar-check"></i> Applications Open</span>
+                    <strong>1st June 2025</strong>
+                </div>
+                <div class="info-row">
+                    <span><i class="fa-regular fa-calendar-xmark"></i> Last Date to Apply</span>
+                    <strong>31st March 2026</strong>
+                </div>
+                <div style="margin-top: 20px;">
+                    <p style="font-size: 0.85rem; font-weight: 700; margin-bottom: 10px;"><i
+                            class="fa-solid fa-clock-rotate-left"></i> Age Criteria (as on 31st March 2026)</p>
+                    <div class="info-row" style="padding: 4px 0; border: none;"><span>Pre KG</span> <strong>: 2+
+                            years</strong></div>
+                    <div class="info-row" style="padding: 4px 0; border: none;"><span>LKG</span> <strong>: 3+
+                            years</strong></div>
+                    <div class="info-row" style="padding: 4px 0; border: none;"><span>UKG</span> <strong>: 4+
+                            years</strong></div>
+                    <div class="info-row" style="padding: 4px 0; border: none;"><span>Grade 1</span> <strong>: 5+
+                            years</strong></div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Required Documents</h3>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Child's Birth Certificate (Original &
+                    Copy)</div>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Passport Size Photographs (Child &
+                    Parents)</div>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Aadhaar Card Copy (Child)</div>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Address Proof</div>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Previous School Report Card (If
+                    applicable)</div>
+                <div class="doc-item"><i class="fa-solid fa-circle-check"></i> Transfer Certificate (If applicable)
+                </div>
+            </div>
+
+            <div class="info-card prospectus-card">
+                <div style="flex: 1;">
+                    <hr style="width: 30px; border: 1.5px solid white; margin-bottom: 15px;">
+                    <h3>Download Prospectus</h3>
+                    <p>Learn more about our programs, facilities, and the opportunities that await your child.</p>
+                    <a href="#" class="btn-download-white">Download  <i class="fa-solid fa-download"></i></a>
+                </div>
+                <img src="Images/image 3.png" alt="Prospectus" class="prospectus-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER (exactly like about us page: dark gradient, modern animations) -->
+    <section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+            <a href="contact.html" class="btn-get-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="decor-icon" style="top: 30px; left: 6%;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon" style="bottom: 30px; right: 6%;"><i class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+
+    <script src="footer.js"></script>
+
+    <!-- Validation & scroll reveal (preserved original validation plus new observer) -->
+    <script>
+        // Intersection Observer for fade-up animations
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Existing form validation (preserved)
+        document.getElementById('heroForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+            const nameRegex = /^[A-Za-z\s]+$/;
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z-]+\.(com|in|org|net)$/i;
+            const phoneRegex = /^[6-9][0-9]{9}$/;
+
+            function validateField(id, regex, errId) {
+                const el = document.getElementById(id);
+                const err = document.getElementById(errId);
+                const val = el.value.trim();
+                if (val === "" || (regex && !regex.test(val))) {
+                    el.classList.add('invalid');
+                    err.style.display = 'block';
+                    isValid = false;
+                } else {
+                    el.classList.remove('invalid');
+                    err.style.display = 'none';
+                }
+            }
+
+            validateField('parentName', nameRegex, 'pNameErr');
+            validateField('phoneNumber', phoneRegex, 'pPhoneErr');
+            validateField('emailAddress', emailRegex, 'pEmailErr');
+            validateField('childName', nameRegex, 'cNameErr');
+            validateField('gradeSelect', null, 'gradeErr');
+
+            if (isValid) {
+                alert('Success! Your enquiry has been sent.');
+                this.reset();
+            }
+        });
+
+        document.getElementById('phoneNumber').addEventListener('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Are We | Santhi Nikethan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+              font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcfcfc;
+            color: #1e293b;
+            font-size: 16px; /* Increased base size */
+        }
+        .brand-blue { color: #1b4a6e; }
+        .brand-bg { background-color: #1b4a6e; }
+        
+        /* Consistent Wide Margin for Modern Screens */
+        .page-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Smooth Card Interaction */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        }
+           /* CTA Banner */
+        .cta-banner {
+            width: 100%;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .join-us .text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .join-us .line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar-group img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -12px;
+            transition: 0.3s;
+        }
+
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .btn-get-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: #4361ee;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="main-header"></div>
+    <script src="header.js"></script>
+
+    <main>
+        <section class="relative h-[420px] bg-cover bg-center flex items-center" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)), url('Images/image\ 29.png');">
+            <div class="page-container w-full">
+                <nav class="text-white/60 text-sm font-medium mb-6 tracking-wide">Home  &nbsp; > &nbsp; Who are we</nav>
+                <h1 class="text-6xl font-extrabold text-white mb-6 tracking-tight">Who are we <span class="text-orange-400">●</span></h1>
+                <p class="text-xl text-gray-200 max-w-2xl font-light leading-relaxed">
+                    Empowering learners, building futures, and shaping a better tomorrow through quality education and strong values.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white py-24">
+            <div class="page-container">
+                <div class="bg-blue-50/40 rounded-[40px] p-10 md:p-16 border border-blue-100/50 flex flex-col md:flex-row gap-16 items-center">
+                    <div class="w-full md:w-2/5">
+                        <img src="Images/image 10.png" alt="Chairman" class="rounded-[32px] shadow-2xl w-full">
+                    </div>
+                    <div class="w-full md:w-3/5">
+                        <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Chairman's Message</h2>
+                        <div class="text-blue-600 text-5xl font-serif mb-6">“</div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6 font-medium">
+                            Welcome to Santhi Nikethan Educational Institutions. Our mission has always been to provide an environment where every child is encouraged to learn, explore, and excel.
+                        </p>
+                        <p class="text-gray-500 text-base leading-relaxed mb-10">
+                            We believe education is not just about books, but about building character, instilling values, and nurturing responsible global citizens.
+                        </p>
+                        <div class="pt-6 border-t border-blue-100">
+                            <p class="font-bold brand-blue text-lg">Dr. K. Raghunathan</p>
+                            <p class="text-gray-400 text-xs uppercase tracking-[0.2em] font-bold mt-1">Chairman</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gray-50/40">
+            <div class="page-container text-center">
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Our Leadership Team</h2>
+                <p class="text-gray-500 text-sm uppercase tracking-widest font-semibold mb-16">Dedicated leaders driving our vision forward</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover-card">
+                        <img src="Images/image 10.png" class="rounded-2xl mb-6 w-full h-56 object-cover grayscale-[30%] hover:grayscale-0 transition duration-500">
+                        <h4 class="font-bold text-base text-slate-800 leading-tight">Dr. K. Raghunathan</h4>
+                        <p class="text-[11px] text-blue-600 font-extrabold uppercase mt-2 tracking-wider">Chairman</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover-card">
+                        <img src="Images/image 11.png" class="rounded-2xl mb-6 w-full h-56 object-cover grayscale-[30%] hover:grayscale-0 transition duration-500">
+                        <h4 class="font-bold text-base text-slate-800 leading-tight">Mr. K. Balasubramanian</h4>
+                        <p class="text-[11px] text-blue-600 font-extrabold uppercase mt-2 tracking-wider">President</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover-card">
+                        <img src="Images/image 12.png" class="rounded-2xl mb-6 w-full h-56 object-cover grayscale-[30%] hover:grayscale-0 transition duration-500">
+                        <h4 class="font-bold text-base text-slate-800 leading-tight">Dr. G. Senthilkumar</h4>
+                        <p class="text-[11px] text-blue-600 font-extrabold uppercase mt-2 tracking-wider">Director</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover-card">
+                        <img src="Images/image 13.png" class="rounded-2xl mb-6 w-full h-56 object-cover grayscale-[30%] hover:grayscale-0 transition duration-500">
+                        <h4 class="font-bold text-base text-slate-800 leading-tight">Mrs. R. Kavitha</h4>
+                        <p class="text-[11px] text-blue-600 font-extrabold uppercase mt-2 tracking-wider">Principal</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm hover-card">
+                        <img src="Images/image 14.png" class="rounded-2xl mb-6 w-full h-56 object-cover grayscale-[30%] hover:grayscale-0 transition duration-500">
+                        <h4 class="font-bold text-base text-slate-800 leading-tight">Mr. M. Suresh</h4>
+                        <p class="text-[11px] text-blue-600 font-extrabold uppercase mt-2 tracking-wider">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="page-container">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-6 hover-card">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-2xl">👥</div>
+                        <div>
+                            <h3 class="text-3xl font-black text-slate-800">250+</h3>
+                            <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-1">Teaching Faculty</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-6 hover-card">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 text-2xl">📚</div>
+                        <div>
+                            <h3 class="text-3xl font-black text-slate-800">120+</h3>
+                            <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-1">Staff Members</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-6 hover-card">
+                        <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 text-2xl">🏛️</div>
+                        <div>
+                            <h3 class="text-3xl font-black text-slate-800">25+</h3>
+                            <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-1">Departments</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex items-center gap-6 hover-card">
+                        <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 text-2xl">🎓</div>
+                        <div>
+                            <h3 class="text-3xl font-black text-slate-800">15:1</h3>
+                            <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest mt-1">Teacher Ratio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="page-container text-center">
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Our Campuses</h2>
+                <p class="text-gray-400 text-sm font-medium mb-16 max-w-xl mx-auto">State-of-the-art infrastructure across multiple campuses designed to inspire learning and growth.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm text-left hover-card">
+                        <img src="Images/image 29.png" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h5 class="font-extrabold text-lg text-slate-800 mb-1">Main Campus</h5>
+                            <p class="text-xs text-blue-600 font-bold mb-6 uppercase tracking-widest">Coimbatore</p>
+<button class="w-full border border-blue-100 py-3 rounded-xl text-xs font-bold text-white transition-all duration-300 bg-[#1b4a6e] hover:bg-[#163d5b]">
+  View Details →
+</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm text-left hover-card">
+                        <img src="Images/image 29.png" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h5 class="font-extrabold text-lg text-slate-800 mb-1">North Campus</h5>
+                            <p class="text-xs text-blue-600 font-bold mb-6 uppercase tracking-widest">Coimbatore</p>
+                            <button class="w-full border border-blue-100 py-3 rounded-xl text-xs font-bold text-white transition-all duration-300 bg-[#1b4a6e] hover:bg-[#163d5b]">
+  View Details →
+</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm text-left hover-card">
+                        <img src="Images/image 29.png" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h5 class="font-extrabold text-lg text-slate-800 mb-1">East Campus</h5>
+                            <p class="text-xs text-blue-600 font-bold mb-6 uppercase tracking-widest">Coimbatore</p>
+<button class="w-full border border-blue-100 py-3 rounded-xl text-xs font-bold text-white transition-all duration-300 bg-[#1b4a6e] hover:bg-[#163d5b]">
+  View Details →
+</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-[32px] overflow-hidden border border-gray-100 shadow-sm text-left hover-card">
+                        <img src="Images/image 29.png" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h5 class="font-extrabold text-lg text-slate-800 mb-1">West Campus</h5>
+                            <p class="text-xs text-blue-600 font-bold mb-6 uppercase tracking-widest">Coimbatore</p>
+                          <button class="w-full border border-blue-100 py-3 rounded-xl text-xs font-bold text-white transition-all duration-300 bg-[#1b4a6e] hover:bg-[#163d5b]">
+  View Details →
+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 text-center bg-white border-t border-gray-50">
+            <div class="page-container">
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Overview</h2>
+                <p class="text-gray-400 text-sm font-medium mb-16 max-w-xl mx-auto">Shaping confident and compassionate individuals through holistic development.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="p-10 border-r border-gray-100 last:border-0">
+                        <div class="text-blue-600 text-4xl mb-6">🎖️</div>
+                        <h4 class="text-2xl font-black brand-blue">30+</h4>
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-3">Years</p>
+                    </div>
+                    <div class="p-10 border-r border-gray-100 last:border-0">
+                        <div class="text-blue-600 text-4xl mb-6">🎓</div>
+                        <h4 class="text-2xl font-black brand-blue">10,000+</h4>
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-3">Students</p>
+                    </div>
+                    <div class="p-10 border-r border-gray-100 last:border-0">
+                        <div class="text-blue-600 text-4xl mb-6">📖</div>
+                        <h4 class="text-2xl font-black brand-blue">100+</h4>
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-3">Programs</p>
+                    </div>
+                    <div class="p-10 border-r border-gray-100 last:border-0">
+                        <div class="text-blue-600 text-4xl mb-6">🏅</div>
+                        <h4 class="text-2xl font-black brand-blue">500+</h4>
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-3">Awards</p>
+                    </div>
+                    <div class="p-10">
+                        <div class="text-blue-600 text-4xl mb-6">🌐</div>
+                        <h4 class="text-2xl font-black brand-blue">Global</h4>
+                        <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-3">Outlook</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- CTA BANNER -->
+    <section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+            <a href="contact.html" class="btn-get-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon"
+                style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+    </main>
+
+    <div id="main-footer"></div>
+    <script src="footer.js"></script>
+
+</body>
+</html>

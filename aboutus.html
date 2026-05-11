@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Shanthinikethan - Main Campus | Premier Educational Institution</title>
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Modern Smooth Font & Interceptor -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section - Gradient Shade on Left, Clear Image on Right */
+        .hero {
+            position: relative;
+            height: 520px;
+            /* Linear gradient from solid black/dark on left to transparent on right */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%),
+                url('Images/image 29.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8%;
+            color: white;
+        }
+
+        /* Workable Breadcrumbs */
+        .breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+        }
+
+        .hero h1 .dot-accent {
+            width: 14px;
+            height: 14px;
+            background-color: #fca311;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero p {
+            max-width: 550px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Interactive Tabs Container */
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 40px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 1.5px solid #ebebeb;
+            margin-bottom: 50px;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #777;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .tab-btn i {
+            font-size: 1.1rem;
+        }
+
+        .tab-btn.active {
+            color: #4361ee;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #4361ee;
+        }
+
+        .tab-panel {
+            display: none;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-panel.active {
+            display: grid;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .panel-text .desc {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: #22c55e;
+        }
+
+        .panel-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Section Global Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 80px 0 40px;
+            color: #1a1a1a;
+        }
+
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .f-icon-box {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        .f-blue {
+            background: #eef2ff;
+            color: #4361ee;
+        }
+
+        .f-green {
+            background: #f0fdf4;
+            color: #22c55e;
+        }
+
+        .f-orange {
+            background: #fff7ed;
+            color: #f97316;
+        }
+
+        .f-purple {
+            background: #faf5ff;
+            color: #a855f7;
+        }
+
+        /* Gallery Slider */
+        .gallery-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding: 10px 0;
+        }
+
+        .gallery-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-item {
+            min-width: 320px;
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #4361ee;
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* Info & Map */
+        .info-map-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .info-card,
+        .map-card {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .info-label {
+            color: #888;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .map-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        .get-in-touch {
+            padding: 40px;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .contact-line i {
+            color: #4361ee;
+            width: 20px;
+        }
+
+        .enquire-btn {
+            display: inline-block;
+            background: #4361ee;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .enquire-btn:hover {
+            background: #1e3a8a;
+            transform: translateY(-3px);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            width: 100%;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .join-us .text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .join-us .line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar-group img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -12px;
+            transition: 0.3s;
+        }
+
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .btn-get-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: #4361ee;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+
+            .tab-panel,
+            .info-map-grid,
+            .map-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 450px;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/image 29.png');
+            }
+        }
+    </style>
+
+    <!-- ========== MODERN ANIMATIONS & ENHANCEMENTS (ADDITIVE, PRESERVING ALL ORIGINAL) ========== -->
+    <style>
+        /* 1. Smooth scroll reveal (intersection observer based animations) */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.85s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Apply to key sections (without removing any existing style) */
+        .tabs-container,
+        .facilities-grid,
+        .gallery-container,
+        .info-map-grid,
+        .cta-banner,
+        .section-title {
+            transition-delay: 0.05s;
+        }
+
+        /* 2. Glassmorphism & modern backdrop on tab container */
+        .tabs-container {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 3. Hero parallax effect on scroll (subtle) */
+        .hero {
+            background-attachment: fixed;
+            transition: transform 0.1s ease;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+
+        /* 4. Advanced Hover Micro-interactions */
+        .tab-btn {
+            border-radius: 40px;
+            transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #eef2ff;
+            transform: translateY(-2px);
+            color: #2c3e9e;
+        }
+
+        .tab-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* facility cards with glow on hover */
+        .facility-card {
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .facility-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(67, 97, 238, 0.1), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .facility-card:hover::before {
+            opacity: 1;
+        }
+
+        /* panel images with scale & rotation effect */
+        .panel-image img {
+            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.2), box-shadow 0.5s;
+        }
+
+        .panel-image img:hover {
+            transform: scale(1.03) rotate(0.5deg);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Gallery Items - cool scale & shadow effects */
+        .gallery-item {
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            border-radius: 24px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Animated Dot with pulse */
+        .dot {
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+        }
+
+        .dot:hover {
+            transform: scale(1.25);
+            background-color: #8ba2ff;
+        }
+
+        /* Buttons with ripple simulation (just enhanced hover effects) */
+        .enquire-btn,
+        .btn-get-start {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease, transform 0.2s;
+        }
+
+        .enquire-btn:active,
+        .btn-get-start:active {
+            transform: scale(0.96);
+        }
+
+        .enquire-btn::after,
+        .btn-get-start::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .enquire-btn:active::after,
+        .btn-get-start:active::after {
+            width: 180px;
+            height: 180px;
+            opacity: 0;
+        }
+
+        /* floating animation for avatar images */
+        .avatar-group img {
+            transition: transform 0.3s ease, filter 0.2s, border-color 0.2s;
+            animation: floatSoft 3s infinite ease-in-out;
+            transform-origin: center;
+        }
+
+        .avatar-group img:nth-child(odd) {
+            animation-delay: 0s;
+        }
+
+        .avatar-group img:nth-child(even) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes floatSoft {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .avatar-group img:hover {
+            transform: scale(1.15) translateY(-5px);
+            filter: brightness(1.05);
+            border-color: #ffc857;
+            animation: none;
+        }
+
+        /* Breadcrumb entrance fade */
+        .breadcrumb {
+            animation: slideDownFade 0.8s ease-out;
+        }
+
+        @keyframes slideDownFade {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* hero text staggered animation */
+        .hero h1 {
+            animation: textGlowPop 0.9s ease-out;
+        }
+
+        @keyframes textGlowPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.96) translateX(-12px);
+                text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateX(0);
+                text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .hero p {
+            animation: fadeInUp 0.8s 0.1s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 0.95;
+                transform: translateY(0);
+            }
+
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+        }
+
+        /* section title underline animated */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title:hover::after {
+            width: 120px;
+        }
+
+        /* Info rows hover effect */
+        .info-row {
+            transition: background 0.2s, padding-left 0.2s;
+            border-radius: 14px;
+        }
+
+        .info-row:hover {
+            background: #f8faff;
+            padding-left: 10px;
+        }
+
+        /* Contact line hover */
+        .contact-line {
+            transition: transform 0.2s ease;
+        }
+
+        .contact-line:hover {
+            transform: translateX(6px);
+        }
+
+        .contact-line i {
+            transition: transform 0.2s;
+        }
+
+        .contact-line:hover i {
+            transform: scale(1.15);
+            color: #2c3e9e;
+        }
+
+        /* Map card subtle zoom on hover */
+        .map-card iframe {
+            transition: all 0.35s ease;
+        }
+
+        .map-card:hover iframe {
+            transform: scale(1.01);
+            filter: brightness(1.02);
+        }
+
+        /* custom scrollbar for modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4361ee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="header.js"></script>
+
+    <!-- Hero Section with Left Shade -->
+    <section class="hero">
+        <div class="breadcrumb">
+            <a href="/">Home</a> <span>&gt;</span>
+            <a href="/about">About Us</a> <span>&gt;</span>
+            <a href="/campuses">Our Campuses</a> <span>&gt;</span>
+            Main Campus
+        </div>
+        <h1>Shanthinikethan <br>Main Campus <span class="dot-accent"></span></h1>
+        <p>Empowering minds and shaping futures through holistic education and moral values in Coimbatore since 1995.
+        </p>
+    </section>
+
+    <!-- Interactive Tabs Navigation -->
+    <section class="tabs-container fade-up">
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab(event, 'overview')">
+                <i class="fa-solid fa-circle-info"></i> Overview
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'facilities-tab')">
+                <i class="fa-solid fa-microscope"></i> Infrastructure
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'gallery-tab')">
+                <i class="fa-solid fa-images"></i> Campus Life
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'info-tab')">
+                <i class="fa-solid fa-list-check"></i> Key Info
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'contact-tab')">
+                <i class="fa-solid fa-phone-volume"></i> Contact
+            </button>
+        </div>
+
+        <!-- Tab Content: Overview (Content from shanthinikethan.in) -->
+        <div id="overview" class="tab-panel active">
+            <div class="panel-text">
+                <h2>Our Vision & Mission</h2>
+                <p class="desc">Shanthinikethan Matric Higher Secondary School focuses on providing quality education
+                    that blends traditional values with modern technology. Our mission is to nurture children into
+                    responsible global citizens with strong ethical foundations.</p>
+                <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Holistic Development Focus</div>
+                <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Child-Centric Learning Environment
+                </div>
+                <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Value-Based Academic Excellence</div>
+            </div>
+            <div class="panel-image"><img src="Images/finalimage.jpeg" alt="Campus Overview"></div>
+        </div>
+
+        <!-- Tab Content: Facilities -->
+        <div id="facilities-tab" class="tab-panel">
+            <div class="panel-text">
+                <h2>World-Class Infrastructure</h2>
+                <p class="desc">Our campus is equipped with state-of-the-art facilities designed to support the academic
+                    and extracurricular growth of our students, from digital classrooms to expansive playgrounds.</p>
+                <div class="feature-item"><i class="fa-solid fa-chalkboard-user"></i> Smart Digital Classrooms</div>
+                <div class="feature-item"><i class="fa-solid fa-flask"></i> Fully Equipped Science Laboratories</div>
+                <div class="feature-item"><i class="fa-solid fa-volleyball"></i> Multi-Sport Outdoor Courts</div>
+            </div>
+            <div class="panel-image"><img src="Images/image 35.png" alt="Infrastructure"></div>
+        </div>
+
+        <!-- Tab Content: Gallery -->
+        <div id="gallery-tab" class="tab-panel">
+            <div class="panel-text">
+                <h2>Vibrant Student Life</h2>
+                <p class="desc">At Shanthinikethan, education goes beyond textbooks. We encourage participation in arts,
+                    sports, and cultural festivals to build confidence and teamwork.</p>
+                <div class="feature-item"><i class="fa-solid fa-music"></i> Performing Arts & Music</div>
+                <div class="feature-item"><i class="fa-solid fa-trophy"></i> Annual Sports Competitions</div>
+            </div>
+            <div class="panel-image"><img src="Images/image 23.png" alt="Campus Life"></div>
+        </div>
+
+        <!-- Tab Content: Key Info -->
+        <div id="info-tab" class="tab-panel">
+            <div class="panel-text">
+                <h2>Quick School Facts</h2>
+                <p class="desc">Established with a vision to serve the community, we maintain a high standard of
+                    academic performance and safety for all our students.</p>
+                <div class="feature-item"><i class="fa-solid fa-award"></i> High Academic Success Rate</div>
+                <div class="feature-item"><i class="fa-solid fa-user-shield"></i> CCTV Monitored Safe Campus</div>
+            </div>
+            <div class="panel-image"><img src="Images/image 32.png" alt="School Info"></div>
+        </div>
+
+        <!-- Tab Content: Contact -->
+        <div id="contact-tab" class="tab-panel">
+            <div class="panel-text">
+                <h2>Plan Your Visit</h2>
+                <p class="desc">Experience our campus firsthand. We invite parents to schedule a tour and meet our
+                    dedicated faculty during office hours.</p>
+                <a href="#" class="enquire-btn">Book a Campus Tour</a>
+            </div>
+            <div class="panel-image"><img src="Images/image 27.png" alt="Contact Us"></div>
+        </div>
+    </section>
+
+    <!-- CAMPUS FACILITIES SECTION -->
+    <h2 class="section-title fade-up">Campus Facilities</h2>
+    <div class="facilities-grid fade-up">
+        <div class="facility-card">
+            <div class="f-icon-box f-purple"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Resource Library</h3>
+            <p>An extensive collection of academic books, journals, and digital resources.</p>
+        </div>
+        <div class="facility-card">
+            <div class="f-icon-box f-green"><i class="fa-solid fa-atom"></i></div>
+            <h3>Innovation Labs</h3>
+            <p>Practical learning spaces for Physics, Chemistry, and Biological sciences.</p>
+        </div>
+        <div class="facility-card">
+            <div class="f-icon-box f-orange"><i class="fa-solid fa-basketball"></i></div>
+            <h3>Sports Complex</h3>
+            <p>Professional coaching for various outdoor and indoor sports activities.</p>
+        </div>
+        <div class="facility-card">
+            <div class="f-icon-box f-blue"><i class="fa-solid fa-van-shuttle"></i></div>
+            <h3>Secure Transport</h3>
+            <p>A dedicated fleet of buses ensuring safe pick-up and drop across the city.</p>
+        </div>
+    </div>
+
+    <!-- CAMPUS GALLERY SECTION -->
+    <h2 class="section-title fade-up">Campus Gallery</h2>
+    <div class="gallery-container fade-up">
+        <div class="gallery-wrapper" id="galleryWrapper">
+            <div class="gallery-item"><img src="Images/IMG_0100.JPG" alt="Gallery 1"></div>
+            <div class="gallery-item"><img src="Images/IMG_0109.JPG" alt="Gallery 2"></div>
+            <div class="gallery-item"><img src="Images/IMG_0139.JPG" alt="Gallery 3"></div>
+            <div class="gallery-item"><img src="Images/IMG_0205.JPG" alt="Gallery 4"></div>
+            <div class="gallery-item"><img src="Images/IMG_0100.JPG" alt="Gallery 5"></div>
+            <div class="gallery-item"><img src="Images/IMG_0109.JPG" alt="Gallery 6"></div>
+            <div class="gallery-item"><img src="Images/IMG_0139.JPG" alt="Gallery 7"></div>
+            <div class="gallery-item"><img src="Images/IMG_0100.JPG" alt="Gallery 8"></div>
+        </div>
+        <div class="slider-dots">
+            <div class="dot active" onclick="scrollGallery(0)"></div>
+            <div class="dot" onclick="scrollGallery(1)"></div>
+            <div class="dot" onclick="scrollGallery(2)"></div>
+            <div class="dot" onclick="scrollGallery(3)"></div>
+            <div class="dot" onclick="scrollGallery(4)"></div>
+        </div>
+    </div>
+
+    <!-- KEY INFO & MAP SECTION -->
+    <div class="info-map-grid fade-up">
+        <div class="info-card">
+            <h3>Key Information</h3>
+            <div class="info-table" style="margin-top:20px;">
+                <div class="info-row"><span class="info-label"><i class="fa-regular fa-calendar"></i>
+                        Established</span><span class="info-value">1995</span></div>
+                <div class="info-row"><span class="info-label"><i class="fa-solid fa-expand"></i> Campus
+                        Area</span><span class="info-value">5+ Acres</span></div>
+                <div class="info-row"><span class="info-label"><i class="fa-solid fa-graduation-cap"></i>
+                        Grades</span><span class="info-value">Pre-KG - Class 12</span></div>
+                <div class="info-row"><span class="info-label"><i class="fa-solid fa-building-columns"></i>
+                        Affiliation</span><span class="info-value">Matric / CBSE</span></div>
+                <div class="info-row"><span class="info-label"><i class="fa-solid fa-users"></i> Student
+                        Body</span><span class="info-value">2500+ Students</span></div>
+            </div>
+        </div>
+
+        <div class="map-card">
+            <iframe class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.51346884613!2d76.88483284033285!3d11.012014524255567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f973901%3A0x282681d76597f4d3!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1715010000000!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="get-in-touch">
+                <h3>Contact Us</h3><br>
+                <p>Shanthinikethan nurtures holistic growth in a safe and supportive learning space.</p>
+                <br>
+                <div class="contact-line"><i class="fa-solid fa-phone"></i> +91 422 123 4567</div>
+                <div class="contact-line"><i class="fa-solid fa-envelope"></i> info@shanthinikethan.in</div>
+                <div class="contact-line"><i class="fa-solid fa-location-dot"></i> Avinashi Road, Coimbatore, Tamil
+                    Nadu.</div>
+                <a href="#" class="enquire-btn">Enquire Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+            <a href="contact.html" class="btn-get-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon"
+                style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+
+    <script src="footer.js"></script>
+
+    <script>
+        // Tab switching
+        function switchTab(evt, tabName) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Gallery Scroll Sync
+        const wrapper = document.getElementById('galleryWrapper');
+        const dots = document.querySelectorAll('.dot');
+
+        function scrollGallery(index) {
+            const scrollAmount = index * 340;
+            wrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            updateDots(index);
+        }
+
+        function updateDots(index) {
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
+        }
+
+        wrapper.addEventListener('scroll', () => {
+            const index = Math.round(wrapper.scrollLeft / 340);
+            updateDots(index);
+        });
+
+        // ========== MODERN ANIMATION: Intersection Observer for Scroll Reveals ==========
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

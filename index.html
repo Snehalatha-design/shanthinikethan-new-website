@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Shanthinikethan | Excellence in Education</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+
+        body {
+            background-color: #fff;
+            overflow-x: hidden;
+            font-size: 1.08rem;
+            line-height: 1.55;
+        }
+
+        :root {
+            --brand-color: #1b4a6e;
+            --primary-color: #1b4a6e;
+            --accent-blue: #2c6288;
+        }
+
+        /* Hide scrollbars for sliders */
+        .horizontal-scroll-wrapper::-webkit-scrollbar,
+        #calendar-slider::-webkit-scrollbar,
+        .teacher-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .horizontal-scroll-wrapper,
+        #calendar-slider,
+        .teacher-slider-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        /* fade-up animation */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
+        }
+
+        [class*="col-"] {
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        .col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            .col-md-4 {
+                flex: 0 0 33.333%;
+                max-width: 33.333%;
+            }
+
+            .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .col-lg-5 {
+                flex: 0 0 41.666%;
+                max-width: 41.666%;
+            }
+
+            .col-lg-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .col-lg-7 {
+                flex: 0 0 58.333%;
+                max-width: 58.333%;
+            }
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #6c757d;
+        }
+
+        .fw-bold {
+            font-weight: 700;
+        }
+
+        .small {
+            font-size: 0.9rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        .py-5 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0f3a55;
+        }
+
+        .btn-light {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        /* Hero & components */
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero-title span.black-text {
+            color: #222;
+        }
+
+        .hero-title span.accent-text {
+            color: var(--accent-blue);
+        }
+
+        .hero-img-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 8px solid #fff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+        }
+
+        .img-top-left {
+            border-radius: 50% 50% 0 50%;
+        }
+
+        .img-top-right {
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .img-bottom-left {
+            border-radius: 50% 0 50% 50%;
+            margin-top: -30px;
+        }
+
+        .img-bottom-right {
+            border-radius: 0 50% 50% 50%;
+            margin-top: 20px;
+        }
+
+        .program-card {
+            border-radius: 20px;
+            padding: 40px 25px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(27, 74, 110, 0.12);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #f1f5f9;
+            color: var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+
+        .program-card:hover .icon-circle {
+            background: var(--primary-color);
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+
+        .about-container {
+            background-color: #f1f5f9;
+            border-radius: 40px;
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+
+        .about-img-main {
+            border-radius: 30px;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .thumb-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: -50px;
+            padding: 0 20px;
+        }
+
+        .thumb-grid img {
+            height: 100px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #fff;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .check-list i {
+            color: var(--primary-color);
+            font-size: 22px;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #143752;
+            transform: scale(1.02);
+        }
+
+        .stats-container {
+            background-color: #1b4a6e;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.8rem;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .facility-card {
+            border-radius: 20px;
+            background: #fff;
+            overflow: hidden;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .facility-card img {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .facility-card .card-body {
+            padding: 1.2rem;
+        }
+
+        .facility-card h6 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1b4a6e;
+        }
+
+        /* CALENDAR SECTION - 3 cards visible perfectly */
+        .calendar-slider-wrapper {
+            position: relative;
+            padding: 0 40px;
+        }
+
+        #calendar-slider {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 24px;
+            padding: 15px 5px;
+            scroll-snap-type: x mandatory;
+        }
+
+        #calendar-slider>div {
+            flex: 0 0 calc(33.333% - 16px);
+            min-width: 280px;
+            scroll-snap-align: start;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid transparent;
+            transition: 0.2s;
+            height: 100%;
+        }
+
+        .event-icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .date-box {
+            width: 70px;
+            height: 80px;
+            border-radius: 16px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-box .m-text {
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px;
+            color: #fff;
+        }
+
+        .date-box .d-text {
+            font-size: 28px;
+            font-weight: 800;
+            background: #fff;
+            padding: 6px 0;
+        }
+
+        .calendar-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #1b4a6e;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .calendar-nav-arrow:hover {
+            background: #0f3a55;
+            color: white;
+        }
+
+        .calendar-nav-arrow.prev {
+            left: 0;
+        }
+
+        .calendar-nav-arrow.next {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-slider-wrapper {
+                padding: 0 15px;
+            }
+
+            .calendar-nav-arrow {
+                width: 36px;
+                height: 36px;
+            }
+
+            #calendar-slider>div {
+                flex: 0 0 calc(100% - 20px);
+                min-width: 260px;
+            }
+        }
+
+        /* Teacher slider nav arrows - brand colour #1b4a6e */
+        .teacher-nav-btn {
+            background-color: #1b4a6e !important;
+            color: white !important;
+            border: none !important;
+            transition: all 0.2s;
+            height: 49px;
+        }
+
+        .teacher-nav-btn:hover {
+            background-color: #0f3a55 !important;
+            color: white !important;
+            transform: scale(1.05);
+        }
+
+        /* Teacher slider */
+        .teacher-slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 0 10px;
+        }
+
+        #teacher-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 24px;
+        }
+
+        .teacher-item {
+            flex: 0 0 auto;
+        }
+
+        .teacher-card {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            height: 380px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .teacher-card:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        .teacher-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .t-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .teacher-item {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .teacher-item {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Gallery - horizontal scroll (uneven heights supported) */
+        .horizontal-scroll-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 20px 0;
+            cursor: grab;
+            scroll-behavior: smooth;
+        }
+
+        .gallery-item {
+            min-width: 320px;
+            transition: 0.2s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            min-height: 380px;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* uneven height effect via varied images + mt-5 class */
+        .gallery-item.mt-5 {
+            margin-top: 2rem;
+        }
+
+        /* FAQ section - modern equal columns */
+        .faq-badge {
+            background: rgba(27, 74, 110, 0.1);
+            color: #1b4a6e;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .support-box {
+            background: #ffffff;
+            border-radius: 28px;
+            transition: all 0.3s;
+            border-left: 5px solid #1b4a6e;
+        }
+
+        .support-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .accordion-button {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.25rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 20px;
+        }
+
+        .accordion-button::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .accordion-button.collapsed::after {
+            content: "\f054";
+        }
+
+        .accordion-collapse:not(.show) {
+            display: none;
+        }
+
+        .accordion-item {
+            border-radius: 20px !important;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.05);
+        }
+
+        .cta-container {
+            background: linear-gradient(105deg, #0f2b3d, #1b4a6e, #2c6288);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .btn-get-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 38px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: #1b4a6e;
+        }
+
+        .avatar-group img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-container {
+                padding: 30px;
+            }
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            display: none;
+        }
+
+    
+
+        @media (min-width: 992px) {
+            .about-content-padding {
+                padding-left: 2.5rem;
+            }
+        }
+           /* CTA Banner */
+        .cta-banner {
+            width: 100%;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .join-us .text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .join-us .line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar-group img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -12px;
+            transition: 0.3s;
+        }
+
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .btn-get-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: #4361ee;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <script src="header.js"></script>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section fade-up"
+            style="padding: 100px 0; background: linear-gradient(135deg,#fff 60%,#fffbf2 100%);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 pe-lg-5">
+                        <div class="badge-custom mb-4"
+                            style="border:1px solid #dee2e6; padding:10px 20px; border-radius:50px; display:inline-flex; gap:10px;">
+                            <i class="fas fa-graduation-cap"></i> A Better Place to Learn</div>
+                        <h1 class="hero-title mb-4">Shantinikethan for a Bright Future</h1>
+                        <p class="text-muted mb-5 fs-5">A modern learning environment where education meets innovation,
+                            inspiring every student to succeed.</p>
+                        <a href="contact.html" class="btn btn-primary-custom btn-lg shadow redirect-btn">Apply Now</a>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0">
+                        <div class="hero-img-container">
+                            <img src="Images/image 2.png"
+                                class="img-top-left" alt="Kids">
+                            <img src="Images/image 3.png"
+                                class="img-top-right" alt="Class">
+                            <img src="Images/image 4.png"
+                                class="img-bottom-left" alt="Learning">
+                            <img src="Images/image 5.png" class="img-bottom-right"
+                                alt="Play">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Program Section -->
+        <section class="programs-section fade-up" style="padding: 80px 0;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-6 mb-2">Our Program</h2>
+                    <div class="section-underline"></div>
+                    <p class="text-muted mb-5" style="max-width:700px; margin:auto;">Discover comprehensive educational programs
+                        designed for student development.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="program-card text-center">
+                            <div class="icon-circle"><i class="fas fa-school"></i></div>
+                            <h5 class="fw-bold">Primary School</h5>
+                            <p class="text-muted">Grades 1-5 strong foundation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="program-card text-center">
+                            <div class="icon-circle"><i class="fas fa-university"></i></div>
+                            <h5 class="fw-bold">High School</h5>
+                            <p class="text-muted">Advanced courses & guidance.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="program-card text-center">
+                            <div class="icon-circle"><i class="fas fa-laptop"></i></div>
+                            <h5 class="fw-bold">Digital Learning</h5>
+                            <p class="text-muted">Tech-enhanced online programs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="program-card text-center">
+                            <div class="icon-circle"><i class="fas fa-palette"></i></div>
+                            <h5 class="fw-bold">Co-Curricular</h5>
+                            <p class="text-muted">Sports, arts & clubs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Our Institute -->
+        <section class="container mb-5 fade-up">
+            <div class="about-container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 position-relative">
+                        <img src="Images/cursor.jpeg" class="about-img-main shadow"
+                            alt="Lab">
+                        <div class="thumb-grid">
+                            <img src="Images/IMG_0100.JPG"
+                                alt="Bus">
+                            <img src="Images/IMG_0109.JPG"
+                                alt="Study">
+                            <img src="Images/IMG_0139.JPG"
+                                alt="Group">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-content-padding">
+                        <h2 class="fw-bold mb-3">About Our Institute
+                        </h2>
+                        <p class="text-muted mb-4">Since 1998, dedicated to exceptional education. Our mission is to
+                            inspire lifelong learning in a nurturing environment.</p>
+                        <ul class="list-unstyled check-list mb-5">
+                            <li><i class="fas fa-check-circle"></i> Modern classroom facilities</li>
+                            <li><i class="fas fa-check-circle"></i> Experienced teachers</li>
+                            <li><i class="fas fa-check-circle"></i> Safe and supportive environment</li>
+                            <li><i class="fas fa-check-circle"></i> Personalized learning approach</li>
+                        </ul>
+                        <button class="btn btn-primary-custom shadow-sm redirect-btn">Learn More <i
+                                class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section py-5 fade-up">
+            <div class="container stats-container text-white py-5 px-4 shadow-lg">
+                <h2 class="text-center fw-bold mb-5 stats-title"><span class="text-white">Our Journey of Growth,
+                        Excellence,</span><span> and Unmatched Impact</span></h2>
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <h3>1500</h3>
+                            <p class="text-uppercase text-white-50 fw-semibold small">TOTAL STUDENTS</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <h3>50</h3>
+                            <p class="text-uppercase text-white-50 fw-semibold small">TOTAL TEACHERS</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <h3>800</h3>
+                            <p class="text-uppercase text-white-50 fw-semibold small">TOTAL PARENTS</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <h3>10+</h3>
+                            <p class="text-uppercase text-white-50 fw-semibold small">YEARS OF INSTITUTE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities -->
+        <section class="facilities-section py-5 fade-up">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3" style="font-size:2.5rem;">Our Facilities</h2>
+             <div class="text-center">
+    <p class="text-muted mb-5" style="max-width:700px; margin:auto;">
+        State-of-the-art facilities for a comprehensive learning experience.
+    </p><br>
+</div>
+                <div class="row g-4">
+                    <!-- facility cards unchanged, preserved -->
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/96/400/250" alt="Lab"><div class="card-body"><h6>Science Lab</h6><p class="text-muted small">Fully-equipped labs for practical learning.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/0/400/250" alt="Computer"><div class="card-body"><h6>Computer Lab</h6><p class="text-muted small">Modern technology for digital skills.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/20/400/250" alt="Library"><div class="card-body"><h6>Library</h6><p class="text-muted small">Extensive collection of books.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/13/400/250" alt="Sports"><div class="card-body"><h6>Sports Ground</h6><p class="text-muted small">Spacious fields for physical activities.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/26/400/250" alt="Smart"><div class="card-body"><h6>Smart Classrooms</h6><p class="text-muted small">Interactive learning with modern tech.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/28/400/250" alt="Health"><div class="card-body"><h6>Health & Safety</h6><p class="text-muted small">Medical facilities & safety protocols.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/29/400/250" alt="Art"><div class="card-body"><h6>Art & Music Studio</h6><p class="text-muted small">Creative space for arts and music.</p></div></div></div>
+                    <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/38/400/250" alt="Cafeteria"><div class="card-body"><h6>Cafeteria</h6><p class="text-muted small">Hygienic and healthy food options.</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNEI Calendar - MAY (arrows updated) -->
+        <section class="calendar-section py-5 fade-up">
+            <div class="container text-center">
+                <div class="d-flex align-items-center justify-content-center mb-4">
+                    <div style="width:50px; height:2px; background:#ddd;"></div><i
+                        class="fas fa-calendar-alt mx-3 text-primary fs-3"></i>
+                    <h2 class="fw-bold mb-0">SNEI Calendar - MAY</h2>
+                    <div style="width:50px; height:2px; background:#ddd;"></div>
+                </div>
+                <div class="calendar-slider-wrapper">
+                    <div id="calendar-slider" class="d-flex"
+                        style="overflow-x: auto; scroll-behavior: smooth; gap: 24px;"></div>
+                    <button class="calendar-nav-arrow prev" id="calPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="calendar-nav-arrow next" id="calNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="mt-5"><a href="events.html" class="btn btn-primary px-5 py-2 rounded-pill shadow">Show All
+                        Events</a></div>
+            </div>
+        </section>
+
+        <!-- Meet Our Teachers (arrows updated) -->
+        <section class="teachers-section py-5 fade-up">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap">
+                    <div>
+                        <h2 class="fw-bold mb-1" style="font-size:2rem;">Meet Our Teachers</h2>
+                        <p class="text-muted">Experienced, caring, and committed to building a strong foundation.</p>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <button class="btn teacher-nav-btn rounded-circle" id="teacherPrev"><i class="fas fa-arrow-left"></i></button>
+                        <button class="btn teacher-nav-btn rounded-circle" id="teacherNext"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="teacher-slider-wrapper">
+                    <div id="teacher-slider" class="d-flex" style="transition: transform 0.5s ease; gap: 24px;">
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 10.png" alt="Teacher"><div class="t-info"><h6>Chairman</h6><p>G. Radha Krishna</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 11.png" alt="Teacher"><div class="t-info"><h6>Vice-Chairman
+
+</h6><p>G. Jhansi Radha Krishna</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 12.png" alt="Teacher"><div class="t-info"><h6>Director - Administration</h6><p>G. Shesharao</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 13.png" alt="Teacher"><div class="t-info"><h6>Director - Administration</h6><p>M. Raghu Babu
+</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 14.png" alt="Teacher"><div class="t-info"><h6>Director - Academics</h6><p>G. Sahithi</p></div></div></div>
+                        <!-- <div class="teacher-item"><div class="teacher-card"><img src="Images/image 15.png" alt="Teacher"><div class="t-info"><h6>Eleanor Pena</h6><p>Art Teacher</p></div></div></div> -->
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 20.png" alt="Teacher"><div class="t-info"><h6>Director - Academics</h6><p>G. Sai Chinmayee</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 21.png" alt="Teacher"><div class="t-info"><h6>Dean of Academics</h6><p>A. Phani Sree</p></div></div></div>
+                        <div class="teacher-item"><div class="teacher-card"><img src="Images/image 22.png" alt="Teacher"><div class="t-info"><h6>Director - Administration</h6><p>P. Srinath</p></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery-scroll-section py-5 fade-up">
+            <div class="container text-center">
+                <p class="text-primary fw-bold mb-1">— Gallery —</p>
+                <h2 class="fw-bold mb-4">Explore Our Campus Life</h2>
+                <p class="text-muted mb-5">A glimpse into classrooms, activities, events, and everyday learning moments.</p>
+                <div class="horizontal-scroll-wrapper" id="galleryContainer">
+                    <div class="gallery-item"><img src="Images/image 30.png" alt="Campus"></div>
+                    <div class="gallery-item mt-5"><img src="Images/image 31.png" alt="Campus"></div>
+                    <div class="gallery-item"><img src="Images/image 32.png" alt="Campus"></div>
+                    <div class="gallery-item mt-5"><img src="Images/image 33.png" alt="Campus"></div>
+                    <div class="gallery-item"><img src="Images/image 34.png" alt="Campus"></div>
+                    <div class="gallery-item mt-5"><img src="Images/image 35.png" alt="Campus"></div>
+                </div>
+            </div>
+        </section>
+
+    <section style="padding:80px 0; background:#f8fafc;">
+
+    <div class="container">
+
+        <!-- HEADING -->
+        <div style="text-align:center; margin-bottom:50px;">
+
+            <span style="background:#e8f1f8;
+            color:#1b4a6e;
+            padding:8px 18px;
+            border-radius:30px;
+            font-size:13px;
+            font-weight:600;
+            display:inline-block;
+            margin-bottom:18px;">
+
+                FAQ
+
+            </span>
+
+            <h2 style="font-size:48px;
+            font-weight:800;
+            color:#0f172a;
+            margin-bottom:15px;">
+
+                Frequently Asked Questions
+
+            </h2>
+
+            <p style="color:#64748b;
+            font-size:17px;
+            max-width:700px;
+            margin:auto;
+            line-height:1.7;">
+
+                Find answers to the most commonly asked questions.
+
+            </p>
+
+        </div>
+
+        <!-- FAQ CENTER -->
+        <div style="max-width:900px; margin:auto;">
+
+            <!-- FAQ 1 -->
+            <div style="background:white;
+            border-radius:18px;
+            padding:24px;
+            margin-bottom:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.05);
+            border:1px solid #e2e8f0;">
+
+                <button type="button"
+                    class="faq-btn"
+                    style="background:none;
+                    border:none;
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    cursor:pointer;">
+
+                    <span style="font-size:18px;
+                    font-weight:700;
+                    color:#0f172a;">
+
+                        How do I create and publish a course?
+
+                    </span>
+
+                    <span class="faq-icon"
+                        style="font-size:24px;">⌄</span>
+
+                </button>
+
+                <div class="faq-answer"
+                    style="display:none;
+                    margin-top:18px;
+                    color:#64748b;
+                    line-height:1.8;
+                    font-size:15px;">
+
+                    You can create courses easily from your dashboard using our course builder tools.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+            <div style="background:white;
+            border-radius:18px;
+            padding:24px;
+            margin-bottom:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.05);
+            border:1px solid #e2e8f0;">
+
+                <button type="button"
+                    class="faq-btn"
+                    style="background:none;
+                    border:none;
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    cursor:pointer;">
+
+                    <span style="font-size:18px;
+                    font-weight:700;
+                    color:#0f172a;">
+
+                        What payment methods do you accept?
+
+                    </span>
+
+                    <span class="faq-icon"
+                        style="font-size:24px;">⌄</span>
+
+                </button>
+
+                <div class="faq-answer"
+                    style="display:none;
+                    margin-top:18px;
+                    color:#64748b;
+                    line-height:1.8;
+                    font-size:15px;">
+
+                    We accept UPI, Credit Cards, Debit Cards and Net Banking.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+            <div style="background:white;
+            border-radius:18px;
+            padding:24px;
+            margin-bottom:20px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.05);
+            border:1px solid #e2e8f0;">
+
+                <button type="button"
+                    class="faq-btn"
+                    style="background:none;
+                    border:none;
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    cursor:pointer;">
+
+                    <span style="font-size:18px;
+                    font-weight:700;
+                    color:#0f172a;">
+
+                        Is there mobile app support?
+
+                    </span>
+
+                    <span class="faq-icon"
+                        style="font-size:24px;">⌄</span>
+
+                </button>
+
+                <div class="faq-answer"
+                    style="display:none;
+                    margin-top:18px;
+                    color:#64748b;
+                    line-height:1.8;
+                    font-size:15px;">
+
+                    Yes, the platform works perfectly on all mobile devices and tablets.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+            <div style="background:white;
+            border-radius:18px;
+            padding:24px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.05);
+            border:1px solid #e2e8f0;">
+
+                <button type="button"
+                    class="faq-btn"
+                    style="background:none;
+                    border:none;
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    cursor:pointer;">
+
+                    <span style="font-size:18px;
+                    font-weight:700;
+                    color:#0f172a;">
+
+                        Can I access courses anytime?
+
+                    </span>
+
+                    <span class="faq-icon"
+                        style="font-size:24px;">⌄</span>
+
+                </button>
+
+                <div class="faq-answer"
+                    style="display:none;
+                    margin-top:18px;
+                    color:#64748b;
+                    line-height:1.8;
+                    font-size:15px;">
+
+                    Yes, enrolled courses are accessible anytime from your account.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+      
+<section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+           <a href="contact.html" class="btn-get-start">
+    Get Started <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+            <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon"
+                style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+    </main>
+
+    <script src="footer.js"></script>
+    <script>
+        // Calendar events (MAY)
+        const mayEvents = [
+            { day: "06", title: "MAP Testing", color: "#3b82f6", icon: "fa-file-alt" },
+            { day: "07", title: "MAP Testing", color: "#10b981", icon: "fa-chart-bar" },
+            { day: "08", title: "MAP Testing", color: "#a855f7", icon: "fa-pen" },
+            { day: "10", title: "Activity Day", color: "#f59e0b", icon: "fa-volleyball-ball" },
+            { day: "12", title: "Revision Class", color: "#3b82f6", icon: "fa-book" },
+            { day: "15", title: "Unit Test", color: "#ef4444", icon: "fa-clipboard-list" }
+        ];
+
+        function loadCalendar() {
+            const container = document.getElementById('calendar-slider');
+            if (container) {
+                container.innerHTML = '';
+                mayEvents.forEach(ev => {
+                    const cardDiv = document.createElement('div');
+                    cardDiv.innerHTML = `
+                    <div class="event-card" style="border-top-color: ${ev.color};">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="date-box shadow-sm">
+                                <span class="m-text" style="background: ${ev.color};">MAY</span>
+                                <span class="d-text" style="color: ${ev.color};">${ev.day}</span>
+                            </div>
+                            <div class="event-icon-circle" style="background: ${ev.color}15; color: ${ev.color};">
+                                <i class="fas ${ev.icon}"></i>
+                            </div>
+                        </div>
+                        <h5 class="fw-bold mt-3">${ev.title}</h5>
+                        <p class="text-muted small">Grades 6-8</p>
+                        <hr style="width: 40px; border: 2px solid ${ev.color}; opacity: 1; margin: 12px 0;">
+                        <p class="text-muted small">Assessment to measure progress and support student growth.</p>
+                    </div>`;
+                    container.appendChild(cardDiv);
+                });
+            }
+        }
+
+        const calSlider = document.getElementById('calendar-slider');
+        if (calSlider) {
+            document.getElementById('calPrev')?.addEventListener('click', () => {
+                const cardWidth = calSlider.children[0]?.offsetWidth + 24 || 320;
+                calSlider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
+            document.getElementById('calNext')?.addEventListener('click', () => {
+                const cardWidth = calSlider.children[0]?.offsetWidth + 24 || 320;
+                calSlider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
+        }
+
+        let teacherIndex = 0;
+        const teacherSlider = document.getElementById('teacher-slider');
+        const teacherItems = document.querySelectorAll('.teacher-item');
+        let visibleCount = 4;
+        function updateVisibleCount() {
+            if (window.innerWidth <= 576) visibleCount = 1;
+            else if (window.innerWidth <= 992) visibleCount = 2;
+            else visibleCount = 4;
+        }
+        function getItemWidth() {
+            if (!teacherItems.length) return 300;
+            const containerWidth = teacherSlider?.parentElement.clientWidth || 800;
+            const gap = 24;
+            return (containerWidth - (gap * (visibleCount - 1))) / visibleCount;
+        }
+        function slideTeacher(direction) {
+            updateVisibleCount();
+            const total = teacherItems.length;
+            const maxIndex = Math.max(0, total - visibleCount);
+            teacherIndex += direction;
+            if (teacherIndex < 0) teacherIndex = 0;
+            if (teacherIndex > maxIndex) teacherIndex = maxIndex;
+            const itemWidth = getItemWidth();
+            const translateX = teacherIndex * (itemWidth + 24);
+            teacherSlider.style.transform = `translateX(-${translateX}px)`;
+        }
+        function initTeacherSlider() {
+            updateVisibleCount();
+            const itemWidth = getItemWidth();
+            teacherItems.forEach(item => item.style.flex = `0 0 ${itemWidth}px`);
+            slideTeacher(0);
+        }
+        window.addEventListener('resize', () => initTeacherSlider());
+        document.getElementById('teacherPrev')?.addEventListener('click', () => slideTeacher(-1));
+        document.getElementById('teacherNext')?.addEventListener('click', () => slideTeacher(1));
+
+        function initAccordion() {
+            document.querySelectorAll('.accordion-button').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const parent = this.closest('.accordion-item');
+                    if (!parent) return;
+                    const collapse = parent.querySelector('.accordion-collapse');
+                    const isOpen = collapse.classList.contains('show');
+                    document.querySelectorAll('.accordion-collapse.show').forEach(c => c.classList.remove('show'));
+                    document.querySelectorAll('.accordion-button').forEach(b => b.classList.add('collapsed'));
+                    if (!isOpen) {
+                        collapse.classList.add('show');
+                        this.classList.remove('collapsed');
+                    } else {
+                        collapse.classList.remove('show');
+                        this.classList.add('collapsed');
+                    }
+                });
+            });
+        }
+
+        let galleryInterval;
+        function startGalleryAutoScroll() {
+            const gallery = document.getElementById('galleryContainer');
+            if (gallery) {
+                if (galleryInterval) clearInterval(galleryInterval);
+                galleryInterval = setInterval(() => {
+                    const step = gallery.querySelector('.gallery-item')?.offsetWidth + 25 || 345;
+                    const max = gallery.scrollWidth - gallery.clientWidth;
+                    let left = gallery.scrollLeft + step;
+                    if (left >= max) left = 0;
+                    gallery.scrollTo({ left, behavior: 'smooth' });
+                }, 4500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadCalendar();
+            initTeacherSlider();
+            initAccordion();
+
+            const gallery = document.getElementById('galleryContainer');
+            if (gallery) {
+                let isDown = false, startX, scrollLeft;
+                gallery.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    gallery.style.cursor = 'grabbing';
+                    startX = e.pageX - gallery.offsetLeft;
+                    scrollLeft = gallery.scrollLeft;
+                    if (galleryInterval) clearInterval(galleryInterval);
+                });
+                gallery.addEventListener('mouseleave', () => { isDown = false; gallery.style.cursor = 'grab'; startGalleryAutoScroll(); });
+                gallery.addEventListener('mouseup', () => { isDown = false; gallery.style.cursor = 'grab'; startGalleryAutoScroll(); });
+                gallery.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - gallery.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    gallery.scrollLeft = scrollLeft - walk;
+                });
+                startGalleryAutoScroll();
+            }
+
+            const faqForm = document.getElementById('faqForm');
+            const emailInput = document.getElementById('userEmail');
+            const emailError = document.getElementById('emailError');
+            const successMsg = document.getElementById('successMsg');
+            if (faqForm) {
+                faqForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const email = emailInput.value.trim();
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email === "" || !emailPattern.test(email)) {
+                        emailError.style.display = 'block';
+                        successMsg.classList.add('d-none');
+                        return;
+                    }
+                    emailError.style.display = 'none';
+                    successMsg.classList.remove('d-none');
+                    emailInput.value = '';
+                    setTimeout(() => successMsg.classList.add('d-none'), 3000);
+                });
+            }
+
+            const faders = document.querySelectorAll('.fade-up');
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+            }, { threshold: 0.1 });
+            faders.forEach(el => obs.observe(el));
+        });
+
+     document.body.addEventListener('click', function (e) {
+
+    let target = e.target.closest('button');
+
+    if (!target) return;
+
+    if (target.closest('.calendar-nav-arrow')) return;
+    if (target.closest('#teacherPrev') || target.closest('#teacherNext')) return;
+    if (target.closest('.accordion-button')) return;
+
+});
+    </script>
+    <script>
+
+const faqButtons = document.querySelectorAll(".faq-btn");
+
+faqButtons.forEach(function(button){
+
+    button.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector(".faq-icon");
+
+        document.querySelectorAll(".faq-answer").forEach(function(item){
+
+            if(item !== answer){
+
+                item.style.display = "none";
+
+            }
+
+        });
+
+        document.querySelectorAll(".faq-icon").forEach(function(item){
+
+            if(item !== icon){
+
+                item.innerHTML = "⌄";
+
+            }
+
+        });
+
+        if(answer.style.display === "block"){
+
+            answer.style.display = "none";
+            icon.innerHTML = "⌄";
+
+        } else {
+
+            answer.style.display = "block";
+            icon.innerHTML = "⌃";
+
+        }
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

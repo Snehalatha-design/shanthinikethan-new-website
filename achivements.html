@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Achievements | Santhi Nikethan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFFFFF;
+            color: #1e293b;
+            font-size: 16px; /* Increased base readability */
+        }
+        .brand-blue { color: #1B4A6E; }
+        .brand-bg { background-color: #1B4A6E; }
+        
+        /* Wide margins for high-end look */
+        .content-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Timeline styling */
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background-color: #E2E8F0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 16px;
+            width: 10px;
+            height: 10px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+            border: 2px solid white;
+            outline: 1px solid #E2E8F0;
+            z-index: 10;
+        }
+
+        /* Smooth scaling for cards */
+        .stat-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+           .cta-banner {
+            width: 100%;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 40%, #2c6288 100%);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .join-us .text {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .join-us .line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .avatar-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar-group img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -12px;
+            transition: 0.3s;
+        }
+
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .btn-get-start {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-get-start:hover {
+            background: white;
+            color: #4361ee;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="main-header"></div>
+    <script src="header.js"></script>
+
+    <main>
+        <section class="relative h-[420px] bg-cover bg-center flex items-center" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Images/image 29.png');">
+            <div class="content-container w-full">
+                <h1 class="text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">Our Achievements</h1>
+                <p class="text-xl text-gray-200 max-w-xl font-light leading-relaxed">
+                    A legacy of trust, excellence, and impact spanning over three decades of educational brilliance.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-container -mt-20 relative z-20">
+            <div class="bg-white rounded-[32px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)] p-12 grid grid-cols-2 md:grid-cols-6 gap-6 border border-gray-100">
+                <div class="text-center border-r border-gray-100 last:border-0 px-4 stat-card">
+                    <div class="text-4xl mb-5">🏆</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">35+</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Years of Excellence</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase">Since 1989</p>
+                </div>
+                <div class="text-center border-r border-gray-100 last:border-0 px-4 stat-card">
+                    <div class="text-4xl mb-5">🎓</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">15k+</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Students Nurtured</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase">and counting</p>
+                </div>
+                <div class="text-center border-r border-gray-100 last:border-0 px-4 stat-card">
+                    <div class="text-4xl mb-5">👥</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">300+</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Expert Educators</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase tracking-tighter leading-none">Qualified Staff</p>
+                </div>
+                <div class="text-center border-r border-gray-100 last:border-0 px-4 stat-card">
+                    <div class="text-4xl mb-5">🏫</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">10</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Modern Campuses</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase">Wide Infrastructure</p>
+                </div>
+                <div class="text-center border-r border-gray-100 last:border-0 px-4 stat-card">
+                    <div class="text-4xl mb-5">📖</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">20+</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Academic Programs</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase">Diverse Learning</p>
+                </div>
+                <div class="text-center px-4 stat-card">
+                    <div class="text-4xl mb-5">🏅</div>
+                    <h3 class="text-4xl font-extrabold brand-blue mb-1">1k+</h3>
+                    <p class="text-[12px] font-bold text-gray-700 uppercase tracking-widest leading-tight">Global Awards</p>
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase tracking-tighter leading-tight">National Wins</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-container py-32 grid md:grid-cols-2 gap-24 items-center">
+            <div>
+                <p class="text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-6">Our Journey</p>
+                <h2 class="text-5xl font-extrabold text-slate-800 leading-[1.1] mb-8">35+ Years of Inspiring Generations</h2>
+                <p class="text-gray-500 mb-10 leading-relaxed text-lg font-light">From our humble beginnings to becoming a trusted name in education, our journey is a testament to our commitment to quality, values, and vision.</p>
+               <a href="aboutus.html">
+                 <button class="brand-bg text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:shadow-2xl transition-all duration-300 text-base active:scale-95">
+                    Know More About Us <span class="ml-2 text-xl">→</span>
+                </button>
+               </a>
+            </div>
+
+            <div class="bg-white p-12 rounded-[40px] border border-gray-50 shadow-sm relative">
+                <div class="timeline-line"></div>
+                <div class="space-y-16">
+                    <div class="relative pl-12">
+                        <div class="timeline-dot top-2"></div>
+                        <h4 class="font-bold text-lg">1989 <span class="brand-blue ml-6 font-semibold">The Beginning</span></h4>
+                        <p class="text-sm text-gray-400 mt-2 leading-relaxed">Santhi Nikethan was founded with a vision to provide quality education rooted in values.</p>
+                    </div>
+                    <div class="relative pl-12">
+                        <div class="timeline-dot top-2"></div>
+                        <h4 class="font-bold text-lg">1995 <span class="brand-blue ml-6 font-semibold">Growing Stronger</span></h4>
+                        <p class="text-sm text-gray-400 mt-2 leading-relaxed">Expanded infrastructure and academic programs to nurture more young minds.</p>
+                    </div>
+                    <div class="relative pl-12">
+                        <div class="timeline-dot top-2"></div>
+                        <h4 class="font-bold text-lg">2024+ <span class="brand-blue ml-6 font-semibold">Building the Future</span></h4>
+                        <p class="text-sm text-gray-400 mt-2 leading-relaxed">Continuing our legacy of excellence and innovating for tomorrow's world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 text-center content-container">
+            <h2 class="text-4xl font-extrabold mb-20 text-slate-800">Why We Stand Out</h2>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">👤</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Academic Excellence</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Top tier results and placements.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">💡</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Innovative Learning</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Modern tech and tools.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Values & Ethics</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Strong character building.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">🏆</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Holistic Growth</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Sports, arts & life skills.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">🤝</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Global Support</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Parental & community engagement.</p>
+                </div>
+                <div class="p-8 bg-white border border-gray-100 rounded-[32px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 stat-card">
+                    <div class="text-4xl mb-6">🌱</div>
+                    <h5 class="text-[12px] font-black brand-blue uppercase tracking-widest mb-3 leading-tight">Future Ready</h5>
+                    <p class="text-[10px] text-gray-400 uppercase font-medium leading-tight">Sustainability focused education.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-container pb-32">
+            <div class="bg-blue-50/40 rounded-[50px] p-16 md:p-20 flex flex-col md:flex-row items-center justify-between border border-blue-100/50 shadow-sm">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- <div class="w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-xl"> -->
+                        <img src="Images/certificate1.webp" height="100" width="100" alt="Trophy">
+                    <!-- </div> -->
+                    <div class="text-center md:text-left">
+                        <p class="text-blue-600 font-bold text-[11px] uppercase tracking-[0.3em] mb-3">Recognized & Trusted</p>
+                        <h3 class="text-4xl font-black brand-blue leading-tight">Honored for Our Commitment</h3>
+                        <p class="text-gray-500 text-base mt-4 max-w-sm font-medium leading-relaxed">Certified and recognized by national educational councils for contribution to school education.</p>
+                    </div>
+                </div>
+                <div class="mt-12 md:mt-0 flex items-center gap-8 border-l-2 border-blue-100 md:pl-16">
+                    <div class="brand-blue text-6xl font-black italic tracking-tighter">1000+</div>
+                    <div class="text-sm font-black text-slate-700 uppercase leading-tight tracking-widest">Awards &<br>Recognitions</div>
+                </div>
+            </div>
+        </section>
+
+          <section class="cta-banner fade-up">
+        <div class="cta-container">
+            <div class="join-us">
+                <span class="line"></span>
+                <span class="text">JOIN US</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="avatar-group">
+                <img src="Images/image 14.png" alt="Student 1">
+                <img src="Images/image 15.png" alt="Student 2">
+                <img src="Images/image 20.png" alt="Student 3">
+                <img src="Images/image 21.png" alt="Student 4">
+                <img src="Images/image 22.png" alt="Student 5">
+            </div>
+
+            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+
+            <a href="contact.html" class="btn-get-start">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-solid fa-graduation-cap"></i></div>
+            <div class="decor-icon"
+                style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i
+                    class="fa-regular fa-face-smile"></i></div>
+        </div>
+    </section>
+    </main>
+
+    <div id="main-footer"></div>
+    <script src="footer.js"></script>
+
+</body>
+</html>
