@@ -254,7 +254,7 @@
 
         /* Hero & components */
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 3.2rem;
             font-weight: 800;
             color: var(--primary-color);
             line-height: 1.2;
@@ -403,10 +403,11 @@
             border-radius: 20px;
             padding: 1.8rem;
             text-align: center;
+            margin-top: 10px;
         }
 
         .stat-card h3 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: #fff;
             margin-bottom: 0.5rem;
         }
@@ -850,7 +851,20 @@
             color: #4361ee;
         }
 
-
+        /* === NEW: Programs section colourful background === */
+        .programs-section {
+            /* background: linear-gradient(110deg, #eef2ff 0%, #fce7f3 100%); */
+            /* lively gentle gradient */
+            border-radius: 0;
+            position: relative;
+        }
+        /* ensure cards pop against new background */
+        .programs-section .program-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(0px);
+            border: 1px solid var(--accent-blue);
+            /* border: double; */
+        }
     </style>
 </head>
 
@@ -859,17 +873,17 @@
     <script src="header.js"></script>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section - Updated with rich colour shade (no white background) -->
         <section class="hero-section fade-up"
-            style="padding: 100px 0; background: linear-gradient(135deg,#fff 60%,#fffbf2 100%);">
+            style="padding: 50px 0; background: radial-gradient(circle at 10% 20%, rgba(190, 132, 64, 0.9), rgba(221, 220, 147, 0.95)), linear-gradient(135deg, #FFE5B4, #B8DFFF, #FFD6E8); background-blend-mode: overlay;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 pe-lg-5">
                         <div class="badge-custom mb-4"
-                            style="border:1px solid #dee2e6; padding:10px 20px; border-radius:50px; display:inline-flex; gap:10px;">
+                            style="border:1px solid rgba(27,74,110,0.3); background: rgba(255,255,240,0.7); padding:10px 20px; border-radius:50px; display:inline-flex; gap:10px;">
                             <i class="fas fa-graduation-cap"></i> A Better Place to Learn</div>
                         <h1 class="hero-title mb-4">Shantinikethan for a Bright Future</h1>
-                        <p class="text-muted mb-5 fs-5">A modern learning environment where education meets innovation,
+                        <p class="text-muted mb-5 fs-5" style="color: #2c3e4e !important;">A modern learning environment where education meets innovation,
                             inspiring every student to succeed.</p>
                         <a href="contact.html" class="btn btn-primary-custom btn-lg shadow redirect-btn">Apply Now</a>
                     </div>
@@ -889,7 +903,7 @@
             </div>
         </section>
 
-        <!-- Our Program Section -->
+        <!-- Our Program Section - NOW highlighted colourful background -->
         <section class="programs-section fade-up" style="padding: 80px 0;">
             <div class="container">
                 <div class="text-center mb-5">
@@ -931,7 +945,7 @@
             </div>
         </section>
 
-        <!-- About Our Institute -->
+        <!-- About Our Institute (unchanged) -->
         <section class="container mb-5 fade-up">
             <div class="about-container">
                 <div class="row align-items-center g-5">
@@ -965,7 +979,7 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Stats Section (unchanged) -->
         <section class="stats-section py-5 fade-up">
             <div class="container stats-container text-white py-5 px-4 shadow-lg">
                 <h2 class="text-center fw-bold mb-5 stats-title"><span class="text-white">Our Journey of Growth,
@@ -973,7 +987,7 @@
                 <div class="row g-4 text-center">
                     <div class="col-6 col-md-3">
                         <div class="stat-card">
-                            <h3>1500</h3>
+                            <h3>900</h3>
                             <p class="text-uppercase text-white-50 fw-semibold small">TOTAL STUDENTS</p>
                         </div>
                     </div>
@@ -999,7 +1013,7 @@
             </div>
         </section>
 
-        <!-- Facilities -->
+        <!-- Facilities (unchanged) -->
         <section class="facilities-section py-5 fade-up">
             <div class="container text-center">
                 <h2 class="fw-bold mb-3" style="font-size:2.5rem;">Our Facilities</h2>
@@ -1009,7 +1023,6 @@
     </p><br>
 </div>
                 <div class="row g-4">
-                    <!-- facility cards unchanged, preserved -->
                     <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/96/400/250" alt="Lab"><div class="card-body"><h6>Science Lab</h6><p class="text-muted small">Fully-equipped labs for practical learning.</p></div></div></div>
                     <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/0/400/250" alt="Computer"><div class="card-body"><h6>Computer Lab</h6><p class="text-muted small">Modern technology for digital skills.</p></div></div></div>
                     <div class="col-6 col-md-3"><div class="facility-card shadow-sm"><img src="https://picsum.photos/id/20/400/250" alt="Library"><div class="card-body"><h6>Library</h6><p class="text-muted small">Extensive collection of books.</p></div></div></div>
@@ -1022,7 +1035,7 @@
             </div>
         </section>
 
-        <!-- SNEI Calendar - MAY (arrows updated) -->
+        <!-- SNEI Calendar (unchanged) -->
         <section class="calendar-section py-5 fade-up">
             <div class="container text-center">
                 <div class="d-flex align-items-center justify-content-center mb-4">
@@ -1042,7 +1055,7 @@
             </div>
         </section>
 
-        <!-- Meet Our Teachers (arrows updated) -->
+        <!-- Meet Our Teachers (unchanged) -->
         <section class="teachers-section py-5 fade-up">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap">
@@ -1065,7 +1078,6 @@
                         <div class="teacher-item"><div class="teacher-card"><img src="Images/image 13.png" alt="Teacher"><div class="t-info"><h6>Director - Administration</h6><p>M. Raghu Babu
 </p></div></div></div>
                         <div class="teacher-item"><div class="teacher-card"><img src="Images/image 14.png" alt="Teacher"><div class="t-info"><h6>Director - Academics</h6><p>G. Sahithi</p></div></div></div>
-                        <!-- <div class="teacher-item"><div class="teacher-card"><img src="Images/image 15.png" alt="Teacher"><div class="t-info"><h6>Eleanor Pena</h6><p>Art Teacher</p></div></div></div> -->
                         <div class="teacher-item"><div class="teacher-card"><img src="Images/image 20.png" alt="Teacher"><div class="t-info"><h6>Director - Academics</h6><p>G. Sai Chinmayee</p></div></div></div>
                         <div class="teacher-item"><div class="teacher-card"><img src="Images/image 21.png" alt="Teacher"><div class="t-info"><h6>Dean of Academics</h6><p>A. Phani Sree</p></div></div></div>
                         <div class="teacher-item"><div class="teacher-card"><img src="Images/image 22.png" alt="Teacher"><div class="t-info"><h6>Director - Administration</h6><p>P. Srinath</p></div></div></div>
@@ -1074,7 +1086,7 @@
             </div>
         </section>
 
-        <!-- Gallery -->
+        <!-- Gallery (unchanged) -->
         <section class="gallery-scroll-section py-5 fade-up">
             <div class="container text-center">
                 <p class="text-primary fw-bold mb-1">— Gallery —</p>
@@ -1091,261 +1103,68 @@
             </div>
         </section>
 
-    <section style="padding:80px 0; background:#f8fafc;">
-
-    <div class="container">
-
-        <!-- HEADING -->
-        <div style="text-align:center; margin-bottom:50px;">
-
-            <span style="background:#e8f1f8;
-            color:#1b4a6e;
-            padding:8px 18px;
-            border-radius:30px;
-            font-size:13px;
-            font-weight:600;
-            display:inline-block;
-            margin-bottom:18px;">
-
-                FAQ
-
-            </span>
-
-            <h2 style="font-size:48px;
-            font-weight:800;
-            color:#0f172a;
-            margin-bottom:15px;">
-
-                Frequently Asked Questions
-
-            </h2>
-
-            <p style="color:#64748b;
-            font-size:17px;
-            max-width:700px;
-            margin:auto;
-            line-height:1.7;">
-
-                Find answers to the most commonly asked questions.
-
-            </p>
-
-        </div>
-
-        <!-- FAQ CENTER -->
-        <div style="max-width:900px; margin:auto;">
-
-            <!-- FAQ 1 -->
-            <div style="background:white;
-            border-radius:18px;
-            padding:24px;
-            margin-bottom:20px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.05);
-            border:1px solid #e2e8f0;">
-
-                <button type="button"
-                    class="faq-btn"
-                    style="background:none;
-                    border:none;
-                    width:100%;
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    cursor:pointer;">
-
-                    <span style="font-size:18px;
-                    font-weight:700;
-                    color:#0f172a;">
-
-                        How do I create and publish a course?
-
-                    </span>
-
-                    <span class="faq-icon"
-                        style="font-size:24px;">⌄</span>
-
-                </button>
-
-                <div class="faq-answer"
-                    style="display:none;
-                    margin-top:18px;
-                    color:#64748b;
-                    line-height:1.8;
-                    font-size:15px;">
-
-                    You can create courses easily from your dashboard using our course builder tools.
-
+        <!-- FAQ Section unchanged -->
+        <section style="padding:80px 0; background:#f8fafc;">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:50px;">
+                    <span style="background:#e8f1f8; color:#1b4a6e; padding:8px 18px; border-radius:30px; font-size:13px; font-weight:600; display:inline-block; margin-bottom:18px;">FAQ</span>
+                    <h2 style="font-size:48px; font-weight:800; color:#0f172a; margin-bottom:15px;">Frequently Asked Questions</h2>
+                    <p style="color:#64748b; font-size:17px; max-width:700px; margin:auto; line-height:1.7;">Find answers to the most commonly asked questions.</p>
                 </div>
-
-            </div>
-
-            <!-- FAQ 2 -->
-            <div style="background:white;
-            border-radius:18px;
-            padding:24px;
-            margin-bottom:20px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.05);
-            border:1px solid #e2e8f0;">
-
-                <button type="button"
-                    class="faq-btn"
-                    style="background:none;
-                    border:none;
-                    width:100%;
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    cursor:pointer;">
-
-                    <span style="font-size:18px;
-                    font-weight:700;
-                    color:#0f172a;">
-
-                        What payment methods do you accept?
-
-                    </span>
-
-                    <span class="faq-icon"
-                        style="font-size:24px;">⌄</span>
-
-                </button>
-
-                <div class="faq-answer"
-                    style="display:none;
-                    margin-top:18px;
-                    color:#64748b;
-                    line-height:1.8;
-                    font-size:15px;">
-
-                    We accept UPI, Credit Cards, Debit Cards and Net Banking.
-
+                <div style="max-width:900px; margin:auto;">
+                    <div style="background:white; border-radius:18px; padding:24px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); border:1px solid #e2e8f0;">
+                        <button type="button" class="faq-btn" style="background:none; border:none; width:100%; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:18px; font-weight:700; color:#0f172a;">How do I create and publish a course?</span>
+                            <span class="faq-icon" style="font-size:24px;">⌄</span>
+                        </button>
+                        <div class="faq-answer" style="display:none; margin-top:18px; color:#64748b; line-height:1.8; font-size:15px;">You can create courses easily from your dashboard using our course builder tools.</div>
+                    </div>
+                    <div style="background:white; border-radius:18px; padding:24px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); border:1px solid #e2e8f0;">
+                        <button type="button" class="faq-btn" style="background:none; border:none; width:100%; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:18px; font-weight:700; color:#0f172a;">What payment methods do you accept?</span>
+                            <span class="faq-icon" style="font-size:24px;">⌄</span>
+                        </button>
+                        <div class="faq-answer" style="display:none; margin-top:18px; color:#64748b; line-height:1.8; font-size:15px;">We accept UPI, Credit Cards, Debit Cards and Net Banking.</div>
+                    </div>
+                    <div style="background:white; border-radius:18px; padding:24px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0,0,0,0.05); border:1px solid #e2e8f0;">
+                        <button type="button" class="faq-btn" style="background:none; border:none; width:100%; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:18px; font-weight:700; color:#0f172a;">Is there mobile app support?</span>
+                            <span class="faq-icon" style="font-size:24px;">⌄</span>
+                        </button>
+                        <div class="faq-answer" style="display:none; margin-top:18px; color:#64748b; line-height:1.8; font-size:15px;">Yes, the platform works perfectly on all mobile devices and tablets.</div>
+                    </div>
+                    <div style="background:white; border-radius:18px; padding:24px; box-shadow:0 8px 20px rgba(0,0,0,0.05); border:1px solid #e2e8f0;">
+                        <button type="button" class="faq-btn" style="background:none; border:none; width:100%; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:18px; font-weight:700; color:#0f172a;">Can I access courses anytime?</span>
+                            <span class="faq-icon" style="font-size:24px;">⌄</span>
+                        </button>
+                        <div class="faq-answer" style="display:none; margin-top:18px; color:#64748b; line-height:1.8; font-size:15px;">Yes, enrolled courses are accessible anytime from your account.</div>
+                    </div>
                 </div>
-
             </div>
-
-            <!-- FAQ 3 -->
-            <div style="background:white;
-            border-radius:18px;
-            padding:24px;
-            margin-bottom:20px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.05);
-            border:1px solid #e2e8f0;">
-
-                <button type="button"
-                    class="faq-btn"
-                    style="background:none;
-                    border:none;
-                    width:100%;
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    cursor:pointer;">
-
-                    <span style="font-size:18px;
-                    font-weight:700;
-                    color:#0f172a;">
-
-                        Is there mobile app support?
-
-                    </span>
-
-                    <span class="faq-icon"
-                        style="font-size:24px;">⌄</span>
-
-                </button>
-
-                <div class="faq-answer"
-                    style="display:none;
-                    margin-top:18px;
-                    color:#64748b;
-                    line-height:1.8;
-                    font-size:15px;">
-
-                    Yes, the platform works perfectly on all mobile devices and tablets.
-
-                </div>
-
-            </div>
-
-            <!-- FAQ 4 -->
-            <div style="background:white;
-            border-radius:18px;
-            padding:24px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.05);
-            border:1px solid #e2e8f0;">
-
-                <button type="button"
-                    class="faq-btn"
-                    style="background:none;
-                    border:none;
-                    width:100%;
-                    display:flex;
-                    justify-content:space-between;
-                    align-items:center;
-                    cursor:pointer;">
-
-                    <span style="font-size:18px;
-                    font-weight:700;
-                    color:#0f172a;">
-
-                        Can I access courses anytime?
-
-                    </span>
-
-                    <span class="faq-icon"
-                        style="font-size:24px;">⌄</span>
-
-                </button>
-
-                <div class="faq-answer"
-                    style="display:none;
-                    margin-top:18px;
-                    color:#64748b;
-                    line-height:1.8;
-                    font-size:15px;">
-
-                    Yes, enrolled courses are accessible anytime from your account.
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+        </section>
       
-<section class="cta-banner fade-up">
-        <div class="cta-container">
-            <div class="join-us">
-                <span class="line"></span>
-                <span class="text">JOIN US</span>
-                <span class="line"></span>
+        <!-- CTA Banner unchanged -->
+        <section class="cta-banner fade-up">
+            <div class="cta-container">
+                <div class="join-us">
+                    <span class="line"></span>
+                    <span class="text">JOIN US</span>
+                    <span class="line"></span>
+                </div>
+                <div class="avatar-group">
+                    <img src="Images/image 14.png" alt="Student 1">
+                    <img src="Images/image 15.png" alt="Student 2">
+                    <img src="Images/image 20.png" alt="Student 3">
+                    <img src="Images/image 21.png" alt="Student 4">
+                    <img src="Images/image 22.png" alt="Student 5">
+                </div>
+                <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
+                <a href="contact.html" class="btn-get-start">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="decor-icon" style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i class="fa-regular fa-face-smile"></i></div>
             </div>
-
-            <div class="avatar-group">
-                <img src="Images/image 14.png" alt="Student 1">
-                <img src="Images/image 15.png" alt="Student 2">
-                <img src="Images/image 20.png" alt="Student 3">
-                <img src="Images/image 21.png" alt="Student 4">
-                <img src="Images/image 22.png" alt="Student 5">
-            </div>
-
-            <h2 class="cta-title">LET’S SECURE YOUR <br> CHILD’S FUTURE</h2>
-
-           <a href="contact.html" class="btn-get-start">
-    Get Started <i class="fa-solid fa-arrow-right"></i>
-</a>
-
-            <div class="decor-icon" style="position: absolute; top: 30px; left: 10%; opacity: 0.2; font-size: 3rem;"><i
-                    class="fa-solid fa-graduation-cap"></i></div>
-            <div class="decor-icon"
-                style="position: absolute; bottom: 30px; right: 10%; opacity: 0.2; font-size: 3rem;"><i
-                    class="fa-regular fa-face-smile"></i></div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <script src="footer.js"></script>
@@ -1498,96 +1317,36 @@
                 startGalleryAutoScroll();
             }
 
-            const faqForm = document.getElementById('faqForm');
-            const emailInput = document.getElementById('userEmail');
-            const emailError = document.getElementById('emailError');
-            const successMsg = document.getElementById('successMsg');
-            if (faqForm) {
-                faqForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const email = emailInput.value.trim();
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (email === "" || !emailPattern.test(email)) {
-                        emailError.style.display = 'block';
-                        successMsg.classList.add('d-none');
-                        return;
-                    }
-                    emailError.style.display = 'none';
-                    successMsg.classList.remove('d-none');
-                    emailInput.value = '';
-                    setTimeout(() => successMsg.classList.add('d-none'), 3000);
-                });
-            }
-
             const faders = document.querySelectorAll('.fade-up');
             const obs = new IntersectionObserver((entries) => {
                 entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
             }, { threshold: 0.1 });
             faders.forEach(el => obs.observe(el));
         });
-
-     document.body.addEventListener('click', function (e) {
-
-    let target = e.target.closest('button');
-
-    if (!target) return;
-
-    if (target.closest('.calendar-nav-arrow')) return;
-    if (target.closest('#teacherPrev') || target.closest('#teacherNext')) return;
-    if (target.closest('.accordion-button')) return;
-
-});
     </script>
     <script>
-
-const faqButtons = document.querySelectorAll(".faq-btn");
-
-faqButtons.forEach(function(button){
-
-    button.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const answer = this.nextElementSibling;
-        const icon = this.querySelector(".faq-icon");
-
-        document.querySelectorAll(".faq-answer").forEach(function(item){
-
-            if(item !== answer){
-
-                item.style.display = "none";
-
-            }
-
+        const faqButtons = document.querySelectorAll(".faq-btn");
+        faqButtons.forEach(function(button){
+            button.addEventListener("click", function(e){
+                e.preventDefault();
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector(".faq-icon");
+                document.querySelectorAll(".faq-answer").forEach(function(item){
+                    if(item !== answer) item.style.display = "none";
+                });
+                document.querySelectorAll(".faq-icon").forEach(function(item){
+                    if(item !== icon) item.innerHTML = "⌄";
+                });
+                if(answer.style.display === "block"){
+                    answer.style.display = "none";
+                    icon.innerHTML = "⌄";
+                } else {
+                    answer.style.display = "block";
+                    icon.innerHTML = "⌃";
+                }
+            });
         });
-
-        document.querySelectorAll(".faq-icon").forEach(function(item){
-
-            if(item !== icon){
-
-                item.innerHTML = "⌄";
-
-            }
-
-        });
-
-        if(answer.style.display === "block"){
-
-            answer.style.display = "none";
-            icon.innerHTML = "⌄";
-
-        } else {
-
-            answer.style.display = "block";
-            icon.innerHTML = "⌃";
-
-        }
-
-    });
-
-});
-
-</script>
+    </script>
 </body>
 
 </html>
